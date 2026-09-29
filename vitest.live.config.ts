@@ -8,5 +8,7 @@ export default defineConfig({
     include: ["packages/*/test/**/*.live.test.ts"],
     environment: "node",
     testTimeout: 30_000,
+    // Keep the per-model report (answers, tokens, cost, latency) visible on passing runs.
+    silent: false,
   },
 });
