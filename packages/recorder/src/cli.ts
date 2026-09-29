@@ -1,12 +1,18 @@
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { parseArgs } from "node:util";
+import type { Capture } from "./capture.js";
 import { startRecorder } from "./proxy.js";
+import { createPseudonymizer, scrubCapture } from "./scrub.js";
 
 const USAGE = `Usage:
   recorder record [--upstream <url>] [--port <n>] [--out <dir>]
       Proxy on 127.0.0.1 that records every exchange. Raw captures contain prompts;
       keep them out of git (captures/ is ignored).
-      Defaults: --upstream https://api.anthropic.com --port 8788 --out captures/<timestamp>`;
+      Defaults: --upstream https://api.anthropic.com --port 8788 --out captures/<timestamp>
+
+  recorder scrub <capture-dir> --out <fixture-dir>
+      Writes a fixture for each capture with credentials and prompt content removed.`;
 
 function fail(message: string): never {
   console.error(`${message}\n\n${USAGE}`);
@@ -48,6 +54,27 @@ async function record(args: string[]): Promise<void> {
   });
 }
 
+async function scrub(args: string[]): Promise<void> {
+  const { values, positionals } = parseArgs({
+    args,
+    allowPositionals: true,
+    options: { out: { type: "string" } },
+  });
+  const [inDir] = positionals;
+  if (inDir === undefined || values.out === undefined) fail("scrub needs <capture-dir> and --out");
+
+  const files = (await readdir(inDir)).filter((f) => f.endsWith(".json")).sort();
+  const pseudonymize = createPseudonymizer();
+  await mkdir(values.out, { recursive: true });
+  for (const file of files) {
+    const capture = JSON.parse(await readFile(join(inDir, file), "utf8")) as Capture;
+    const fixture = scrubCapture(capture, pseudonymize);
+    await writeFile(join(values.out, file), `${JSON.stringify(fixture, null, 2)}\n`);
+  }
+  console.log(`scrubbed ${files.length} captures into ${values.out}`);
+}
+
 const [command, ...rest] = process.argv.slice(2);
 if (command === "record") await record(rest);
+else if (command === "scrub") await scrub(rest);
 else fail(command === undefined ? "missing command" : `unknown command: ${command}`);
