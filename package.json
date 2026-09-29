@@ -18,6 +18,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:live": "vitest run --config vitest.live.config.ts",
+    "record": "pnpm --filter @tokenyard/recorder build && node packages/recorder/dist/cli.mjs record",
+    "scrub": "pnpm --filter @tokenyard/recorder build && node packages/recorder/dist/cli.mjs scrub",
     "lint": "biome check .",
     "format": "biome check --write ."
   },
