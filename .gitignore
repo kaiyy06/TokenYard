@@ -10,6 +10,9 @@ dist/
 *.sqlite
 *.log
 
+# Raw traffic captures (contain prompts); only scrubbed fixtures are committed
+captures/
+
 # Environment
 .env
 .env.*
