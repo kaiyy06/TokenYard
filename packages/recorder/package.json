@@ -1,0 +1,18 @@
+{
+  "name": "@tokenyard/recorder",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Recording proxy that captures real coding-agent traffic as test fixtures.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "tsdown": "0.23.0"
+  }
+}
