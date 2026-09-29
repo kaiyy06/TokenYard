@@ -17,6 +17,7 @@
     "typecheck": "pnpm -r typecheck",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:live": "vitest run --config vitest.live.config.ts",
     "lint": "biome check .",
     "format": "biome check --write ."
   },
