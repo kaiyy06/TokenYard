@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "recordedAt": "2026-01-01T00:00:00.000Z",
+  "upstream": "synthetic",
+  "request": {
+    "method": "POST",
+    "path": "/v1/messages",
+    "headers": {
+      "content-type": "application/json",
+      "anthropic-version": "2023-06-01",
+      "x-api-key": "sk-ant-api03-[redacted]",
+      "user-agent": "synthetic"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "claude-haiku-4-5",
+        "max_tokens": 64,
+        "messages": [
+          {
+            "role": "user",
+            "content": "[scrubbed 10 chars]"
+          }
+        ]
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "application/json"
+    },
+    "firstByteMs": 120,
+    "totalMs": 900,
+    "chunkCount": 1,
+    "body": {
+      "kind": "json",
+      "json": {
+        "id": "msg_syn2",
+        "type": "message",
+        "role": "assistant",
+        "model": "claude-haiku-4-5-20251001",
+        "content": [
+          {
+            "type": "text",
+            "text": "[scrubbed 8 chars]"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 25,
+          "output_tokens": 9,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        }
+      }
+    }
+  }
+}

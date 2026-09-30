@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "recordedAt": "2026-01-01T00:00:00.000Z",
+  "upstream": "synthetic",
+  "request": {
+    "method": "POST",
+    "path": "/v1/responses",
+    "headers": {
+      "content-type": "application/json",
+      "authorization": "Bearer sk-[redacted]",
+      "user-agent": "synthetic"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "gpt-5-codex",
+        "stream": true,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": "[scrubbed 30 chars]"
+          }
+        ]
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "content-type": "text/event-stream; charset=utf-8",
+      "cache-control": "no-cache",
+      "request-id": "req_synthetic"
+    },
+    "firstByteMs": 120,
+    "totalMs": 900,
+    "chunkCount": 3,
+    "body": {
+      "kind": "sse",
+      "events": [
+        {
+          "at": 100,
+          "event": "response.created",
+          "data": {
+            "type": "response.created",
+            "response": {
+              "id": "resp_syn",
+              "model": "gpt-5-codex",
+              "status": "in_progress"
+            }
+          }
+        },
+        {
+          "at": 200,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "delta": "[scrubbed 4 chars]"
+          }
+        },
+        {
+          "at": 300,
+          "event": "response.completed",
+          "data": {
+            "type": "response.completed",
+            "response": {
+              "id": "resp_syn",
+              "model": "gpt-5-codex",
+              "status": "completed",
+              "usage": {
+                "input_tokens": 500,
+                "output_tokens": 40,
+                "input_tokens_details": {
+                  "cached_tokens": 128
+                },
+                "output_tokens_details": {
+                  "reasoning_tokens": 10
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

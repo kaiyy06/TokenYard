@@ -1,0 +1,30 @@
+{
+  "anthropic-stream.json": {
+    "model": "claude-sonnet-5-5",
+    "inputTokens": 12,
+    "outputTokens": 57,
+    "cacheReadTokens": 4000,
+    "cacheWriteTokens": 300
+  },
+  "anthropic-json.json": {
+    "model": "claude-haiku-4-5-20251001",
+    "inputTokens": 25,
+    "outputTokens": 9,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+  },
+  "openai-chat-stream.json": {
+    "model": "gpt-5",
+    "inputTokens": 100,
+    "outputTokens": 20,
+    "cacheReadTokens": 900,
+    "cacheWriteTokens": 0
+  },
+  "openai-responses-stream.json": {
+    "model": "gpt-5-codex",
+    "inputTokens": 372,
+    "outputTokens": 40,
+    "cacheReadTokens": 128,
+    "cacheWriteTokens": 0
+  }
+}
