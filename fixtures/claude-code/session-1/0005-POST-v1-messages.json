@@ -1,0 +1,4119 @@
+{
+  "version": 1,
+  "recordedAt": "2026-09-30T12:28:32.157Z",
+  "upstream": "https://api.anthropic.com",
+  "request": {
+    "method": "POST",
+    "path": "/v1/messages?beta=true",
+    "headers": {
+      "accept": "application/json",
+      "authorization": "Bearer sk-ant-oat01-[redacted]",
+      "content-type": "application/json",
+      "user-agent": "claude-cli/2.1.285 (external, cli)",
+      "x-claude-code-session-id": "5c681d9c-acc5-02ef-e66f-018e8a0c7a53",
+      "x-stainless-arch": "x64",
+      "x-stainless-lang": "js",
+      "x-stainless-os": "Linux",
+      "x-stainless-package-version": "0.127.0",
+      "x-stainless-retry-count": "0",
+      "x-stainless-runtime": "node",
+      "x-stainless-runtime-version": "v26.3.0",
+      "x-stainless-timeout": "600",
+      "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,redact-thinking-2026-02-12,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,per-turn-control-2026-07-01,advisor-tool-2026-03-01,effort-2025-11-24,dangerous-tool-use-2026-09-03,afk-mode-2026-01-31,extended-cache-ttl-2025-04-11",
+      "anthropic-dangerous-direct-browser-access": "ikxw",
+      "anthropic-version": "2023-06-01",
+      "x-app": "cli",
+      "connection": "keep-alive",
+      "host": "127.0.0.1:8788",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "content-length": "227263"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "claude-sonnet-5-5",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "[scrubbed 564 chars]"
+              },
+              {
+                "type": "text",
+                "text": "[scrubbed 559 chars]"
+              },
+              {
+                "type": "text",
+                "text": "[scrubbed 583 chars]"
+              },
+              {
+                "type": "text",
+                "text": "[scrubbed 5 chars]"
+              }
+            ]
+          },
+          {
+            "role": "system",
+            "content": "[scrubbed 19367 chars]",
+            "output_config": {
+              "effort": "medium"
+            }
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "[scrubbed 42 chars]",
+                "cache_control": {
+                  "type": "ephemeral",
+                  "ttl": "1h"
+                }
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "[scrubbed 127 chars]",
+                "cache_control": {
+                  "type": "ephemeral",
+                  "ttl": "1h"
+                }
+              }
+            ]
+          }
+        ],
+        "system": [
+          {
+            "type": "text",
+            "text": "[scrubbed 70 chars]"
+          },
+          {
+            "type": "text",
+            "text": "[scrubbed 57 chars]",
+            "cache_control": {
+              "type": "ephemeral",
+              "ttl": "1h"
+            }
+          },
+          {
+            "type": "text",
+            "text": "[scrubbed 6219 chars]",
+            "cache_control": {
+              "type": "ephemeral",
+              "ttl": "1h"
+            }
+          }
+        ],
+        "tools": [
+          {
+            "name": "Agent",
+            "description": "[scrubbed 1811 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "description": {
+                  "description": "[scrubbed 42 chars]",
+                  "type": "string"
+                },
+                "prompt": {
+                  "description": "[scrubbed 33 chars]",
+                  "type": "string"
+                },
+                "subagent_type": {
+                  "description": "[scrubbed 50 chars]",
+                  "type": "string"
+                },
+                "model": {
+                  "description": "[scrubbed 358 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                },
+                "isolation": {
+                  "description": "[scrubbed 221 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 8 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                }
+              },
+              "required": [
+                "[scrubbed 11 chars]",
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Artifact",
+            "description": "[scrubbed 19870 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "action": {
+                  "description": "[scrubbed 196 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 7 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 10 chars]"
+                  ]
+                },
+                "file_path": {
+                  "description": "[scrubbed 312 chars]",
+                  "type": "string"
+                },
+                "asset": {
+                  "description": "[scrubbed 278 chars]",
+                  "type": "boolean"
+                },
+                "file_paths": {
+                  "description": "[scrubbed 445 chars]",
+                  "minItems": 1,
+                  "maxItems": 25,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024,
+                    "pattern": "[scrubbed 8 chars]"
+                  }
+                },
+                "from_url": {
+                  "description": "[scrubbed 115 chars]",
+                  "type": "string",
+                  "maxLength": 512
+                },
+                "asset_ids": {
+                  "description": "[scrubbed 159 chars]",
+                  "minItems": 1,
+                  "maxItems": 10,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "[scrubbed 14 chars]"
+                  }
+                },
+                "favicon": {
+                  "description": "[scrubbed 44 chars]",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 32
+                },
+                "icon": {
+                  "description": "[scrubbed 362 chars]",
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "files": {
+                  "description": "[scrubbed 947 chars]",
+                  "anyOf": [
+                    {
+                      "maxItems": 255,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "path": {
+                            "description": "[scrubbed 161 chars]",
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 512
+                          },
+                          "contentType": {
+                            "description": "[scrubbed 114 chars]",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 4 chars]"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "propertyNames": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "additionalProperties": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 512
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "from": {
+                                "description": "[scrubbed 141 chars]",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 512
+                              },
+                              "contentType": {
+                                "description": "[scrubbed 104 chars]",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "[scrubbed 4 chars]"
+                            ],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "artifact": {
+                                "description": "[scrubbed 155 chars]",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 512
+                              },
+                              "path": {
+                                "description": "[scrubbed 103 chars]",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 512
+                              },
+                              "ver": {
+                                "description": "[scrubbed 162 chars]",
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 64
+                              }
+                            },
+                            "required": [
+                              "[scrubbed 8 chars]",
+                              "[scrubbed 4 chars]"
+                            ],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "root": {
+                  "description": "[scrubbed 357 chars]",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1024
+                },
+                "pin": {
+                  "description": "[scrubbed 223 chars]",
+                  "type": "boolean"
+                },
+                "limit": {
+                  "description": "[scrubbed 66 chars]",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 50
+                },
+                "scope": {
+                  "description": "[scrubbed 181 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                },
+                "type_query": {
+                  "description": "[scrubbed 338 chars]",
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "type": {
+                  "description": "[scrubbed 237 chars]",
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "intent": {
+                  "description": "[scrubbed 213 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 8 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                },
+                "design_systems": {
+                  "description": "[scrubbed 264 chars]",
+                  "type": "boolean"
+                },
+                "title": {
+                  "description": "[scrubbed 315 chars]",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "[scrubbed 59 chars]",
+                  "type": "string",
+                  "maxLength": 1000
+                },
+                "label": {
+                  "description": "[scrubbed 125 chars]",
+                  "type": "string",
+                  "maxLength": 60
+                },
+                "overwrite_unread": {
+                  "description": "[scrubbed 525 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  }
+                },
+                "url": {
+                  "description": "[scrubbed 884 chars]",
+                  "type": "string"
+                },
+                "type_url": {
+                  "description": "[scrubbed 343 chars]",
+                  "type": "string",
+                  "maxLength": 2048
+                },
+                "auto_open": {
+                  "description": "[scrubbed 521 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 9 chars]",
+                    "[scrubbed 17 chars]"
+                  ]
+                },
+                "prompt": {
+                  "description": "[scrubbed 107 chars]",
+                  "type": "string"
+                },
+                "force": {
+                  "description": "[scrubbed 360 chars]",
+                  "type": "boolean"
+                },
+                "out_dir": {
+                  "description": "[scrubbed 428 chars]",
+                  "type": "string",
+                  "maxLength": 4096
+                },
+                "path": {
+                  "description": "[scrubbed 416 chars]",
+                  "type": "string",
+                  "maxLength": 512
+                },
+                "paths": {
+                  "description": "[scrubbed 250 chars]",
+                  "minItems": 1,
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "maxLength": 512
+                  }
+                },
+                "after": {
+                  "description": "[scrubbed 95 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 24 chars]"
+                },
+                "page": {
+                  "description": "[scrubbed 153 chars]",
+                  "type": "boolean"
+                },
+                "capabilities": {
+                  "description": "[scrubbed 220 chars]",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 64
+                  },
+                  "additionalProperties": {}
+                },
+                "contract": {
+                  "description": "[scrubbed 272 chars]",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "[scrubbed 6 chars]"
+                    },
+                    {
+                      "type": "string",
+                      "pattern": "[scrubbed 54 chars]"
+                    }
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ArtifactComments",
+            "description": "[scrubbed 5141 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "action": {
+                  "description": "[scrubbed 567 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 7 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                },
+                "url": {
+                  "description": "[scrubbed 86 chars]",
+                  "type": "string"
+                },
+                "thread_id": {
+                  "description": "[scrubbed 234 chars]",
+                  "type": "string"
+                },
+                "text": {
+                  "description": "[scrubbed 68 chars]",
+                  "type": "string"
+                },
+                "cursor": {
+                  "description": "[scrubbed 158 chars]",
+                  "type": "string"
+                },
+                "acknowledge_duplicate": {
+                  "description": "[scrubbed 283 chars]",
+                  "type": "boolean"
+                },
+                "on": {
+                  "description": "[scrubbed 80 chars]",
+                  "type": "boolean"
+                },
+                "replies": {
+                  "description": "[scrubbed 174 chars]",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ArtifactData",
+            "description": "[scrubbed 4168 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "action": {
+                  "description": "[scrubbed 654 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 11 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 8 chars]"
+                  ]
+                },
+                "url": {
+                  "description": "[scrubbed 39 chars]",
+                  "type": "string"
+                },
+                "writes": {
+                  "description": "[scrubbed 822 chars]",
+                  "minItems": 1,
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "type": "string",
+                        "enum": [
+                          "[scrubbed 3 chars]",
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 6 chars]"
+                        ]
+                      },
+                      "collection": {
+                        "type": "string",
+                        "maxLength": 1000,
+                        "pattern": "[scrubbed 100 chars]"
+                      },
+                      "doc_id": {
+                        "type": "string",
+                        "pattern": "[scrubbed 45 chars]"
+                      },
+                      "data": {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {}
+                      },
+                      "file_path": {
+                        "type": "string"
+                      },
+                      "if_version": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 2 chars]",
+                      "[scrubbed 10 chars]",
+                      "[scrubbed 6 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "collection": {
+                  "description": "[scrubbed 561 chars]",
+                  "type": "string",
+                  "maxLength": 1000,
+                  "pattern": "[scrubbed 100 chars]"
+                },
+                "ids": {
+                  "description": "[scrubbed 127 chars]",
+                  "minItems": 1,
+                  "maxItems": 64,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "doc_id": {
+                  "description": "[scrubbed 140 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 45 chars]"
+                },
+                "query": {
+                  "description": "[scrubbed 478 chars]",
+                  "type": "object",
+                  "properties": {
+                    "where": {
+                      "maxItems": 10,
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "prefixItems": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "string",
+                            "enum": [
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 6 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 3 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 3 chars]",
+                              "[scrubbed 14 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 1 chars]",
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 1 chars]",
+                              "[scrubbed 2 chars]"
+                            ]
+                          },
+                          {}
+                        ]
+                      }
+                    },
+                    "order_by": {
+                      "type": "object",
+                      "properties": {
+                        "field": {
+                          "type": "string"
+                        },
+                        "direction": {
+                          "type": "string",
+                          "enum": [
+                            "[scrubbed 3 chars]",
+                            "[scrubbed 4 chars]"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 5 chars]"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000
+                    },
+                    "cursor": {
+                      "type": "string",
+                      "maxLength": 4096
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "field": {
+                  "description": "[scrubbed 243 chars]",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "old_str": {
+                  "description": "[scrubbed 217 chars]",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 262144
+                },
+                "new_str": {
+                  "description": "[scrubbed 81 chars]",
+                  "type": "string",
+                  "maxLength": 262144
+                },
+                "replace_all": {
+                  "description": "[scrubbed 178 chars]",
+                  "type": "boolean"
+                },
+                "if_version": {
+                  "description": "[scrubbed 641 chars]",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "data": {
+                  "description": "[scrubbed 181 chars]",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {}
+                },
+                "file_path": {
+                  "description": "[scrubbed 175 chars]",
+                  "type": "string"
+                },
+                "out_dir": {
+                  "description": "[scrubbed 276 chars]",
+                  "type": "string",
+                  "maxLength": 4096
+                },
+                "as_level": {
+                  "description": "[scrubbed 534 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 8 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "AskUserQuestion",
+            "description": "[scrubbed 1786 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "questions": {
+                  "description": "[scrubbed 41 chars]",
+                  "minItems": 1,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "question": {
+                        "description": "[scrubbed 247 chars]",
+                        "type": "string"
+                      },
+                      "header": {
+                        "description": "[scrubbed 104 chars]",
+                        "type": "string"
+                      },
+                      "options": {
+                        "description": "[scrubbed 228 chars]",
+                        "minItems": 2,
+                        "maxItems": 4,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "description": "[scrubbed 130 chars]",
+                              "type": "string"
+                            },
+                            "description": {
+                              "description": "[scrubbed 131 chars]",
+                              "type": "string"
+                            },
+                            "preview": {
+                              "description": "[scrubbed 207 chars]",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "[scrubbed 5 chars]",
+                            "[scrubbed 11 chars]"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "multiSelect": {
+                        "description": "[scrubbed 122 chars]",
+                        "default": false,
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 8 chars]",
+                      "[scrubbed 6 chars]",
+                      "[scrubbed 7 chars]",
+                      "[scrubbed 11 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "answers": {
+                  "description": "[scrubbed 50 chars]",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": "string"
+                  }
+                },
+                "annotations": {
+                  "description": "[scrubbed 108 chars]",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": "object",
+                    "properties": {
+                      "preview": {
+                        "description": "[scrubbed 74 chars]",
+                        "type": "string"
+                      },
+                      "notes": {
+                        "description": "[scrubbed 50 chars]",
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "metadata": {
+                  "description": "[scrubbed 77 chars]",
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "description": "[scrubbed 122 chars]",
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "[scrubbed 9 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Bash",
+            "description": "[scrubbed 1493 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "command": {
+                  "description": "[scrubbed 22 chars]",
+                  "type": "string"
+                },
+                "timeout": {
+                  "description": "[scrubbed 70 chars]",
+                  "type": "number"
+                },
+                "description": {
+                  "description": "[scrubbed 926 chars]",
+                  "type": "string"
+                },
+                "run_in_background": {
+                  "description": "[scrubbed 182 chars]",
+                  "type": "boolean"
+                },
+                "dangerouslyDisableSandbox": {
+                  "description": "[scrubbed 90 chars]",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 7 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "CronCreate",
+            "description": "[scrubbed 2595 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "cron": {
+                  "description": "[scrubbed 151 chars]",
+                  "type": "string"
+                },
+                "prompt": {
+                  "description": "[scrubbed 40 chars]",
+                  "type": "string"
+                },
+                "recurring": {
+                  "description": "[scrubbed 224 chars]",
+                  "type": "boolean"
+                },
+                "durable": {
+                  "description": "[scrubbed 128 chars]",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 4 chars]",
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "CronDelete",
+            "description": "[scrubbed 100 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "[scrubbed 30 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 2 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "CronList",
+            "description": "[scrubbed 60 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "DesignSync",
+            "description": "[scrubbed 3869 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 13 chars]",
+                    "[scrubbed 11 chars]",
+                    "[scrubbed 10 chars]",
+                    "[scrubbed 8 chars]",
+                    "[scrubbed 13 chars]",
+                    "[scrubbed 11 chars]",
+                    "[scrubbed 12 chars]",
+                    "[scrubbed 15 chars]",
+                    "[scrubbed 17 chars]",
+                    "[scrubbed 14 chars]",
+                    "[scrubbed 15 chars]"
+                  ]
+                },
+                "projectId": {
+                  "description": "[scrubbed 64 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "path": {
+                  "description": "[scrubbed 27 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "writes": {
+                  "description": "[scrubbed 286 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                },
+                "deletes": {
+                  "description": "[scrubbed 100 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                },
+                "planId": {
+                  "description": "[scrubbed 97 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "files": {
+                  "description": "[scrubbed 134 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "path": {
+                        "description": "[scrubbed 58 chars]",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "localPath": {
+                        "description": "[scrubbed 256 chars]",
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "data": {
+                        "description": "[scrubbed 160 chars]",
+                        "type": "string"
+                      },
+                      "encoding": {
+                        "description": "[scrubbed 38 chars]",
+                        "type": "string",
+                        "enum": [
+                          "[scrubbed 6 chars]"
+                        ]
+                      },
+                      "mimeType": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 4 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "paths": {
+                  "description": "[scrubbed 189 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                },
+                "name": {
+                  "description": "[scrubbed 54 chars]",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "assets": {
+                  "description": "[scrubbed 152 chars]",
+                  "maxItems": 256,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "description": "[scrubbed 58 chars]",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 255
+                      },
+                      "path": {
+                        "description": "[scrubbed 64 chars]",
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 256
+                      },
+                      "subtitle": {
+                        "description": "[scrubbed 55 chars]",
+                        "type": "string",
+                        "maxLength": 255
+                      },
+                      "viewport": {
+                        "description": "[scrubbed 41 chars]",
+                        "type": "object",
+                        "properties": {
+                          "width": {
+                            "type": "integer",
+                            "exclusiveMinimum": 0,
+                            "maximum": 9007199254740991
+                          },
+                          "height": {
+                            "type": "integer",
+                            "exclusiveMinimum": 0,
+                            "maximum": 9007199254740991
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 5 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "group": {
+                        "description": "[scrubbed 348 chars]",
+                        "type": "string",
+                        "maxLength": 64
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 4 chars]",
+                      "[scrubbed 4 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "localDir": {
+                  "description": "[scrubbed 229 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "counts": {
+                  "description": "[scrubbed 104 chars]",
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "bad": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "thin": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "variantsIdentical": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "iterations": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 17 chars]",
+                    "[scrubbed 10 chars]"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Edit",
+            "description": "[scrubbed 360 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "[scrubbed 39 chars]",
+                  "type": "string"
+                },
+                "old_string": {
+                  "description": "[scrubbed 19 chars]",
+                  "type": "string"
+                },
+                "new_string": {
+                  "description": "[scrubbed 63 chars]",
+                  "type": "string"
+                },
+                "replace_all": {
+                  "description": "[scrubbed 53 chars]",
+                  "default": false,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 9 chars]",
+                "[scrubbed 10 chars]",
+                "[scrubbed 10 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "EndConversation",
+            "description": "[scrubbed 4500 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "EnterPlanMode",
+            "description": "[scrubbed 4011 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "EnterWorktree",
+            "description": "[scrubbed 3220 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "[scrubbed 221 chars]",
+                  "type": "string"
+                },
+                "path": {
+                  "description": "[scrubbed 262 chars]",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ExitPlanMode",
+            "description": "[scrubbed 1849 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "allowedPrompts": {
+                  "description": "[scrubbed 27 chars]",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tool": {
+                        "description": "[scrubbed 31 chars]",
+                        "type": "string",
+                        "enum": [
+                          "[scrubbed 4 chars]"
+                        ]
+                      },
+                      "prompt": {
+                        "description": "[scrubbed 76 chars]",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 4 chars]",
+                      "[scrubbed 6 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": {}
+            }
+          },
+          {
+            "name": "ExitWorktree",
+            "description": "[scrubbed 1923 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "action": {
+                  "description": "[scrubbed 69 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                },
+                "discard_changes": {
+                  "description": "[scrubbed 143 chars]",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ListAgents",
+            "description": "[scrubbed 777 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "channel": {
+                  "description": "[scrubbed 41 chars]",
+                  "type": "string",
+                  "maxLength": 256
+                },
+                "q": {
+                  "description": "[scrubbed 41 chars]",
+                  "type": "string",
+                  "maxLength": 256
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Monitor",
+            "description": "[scrubbed 6354 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "description": {
+                  "description": "[scrubbed 85 chars]",
+                  "type": "string"
+                },
+                "timeout_ms": {
+                  "description": "[scrubbed 149 chars]",
+                  "default": 300000,
+                  "type": "number",
+                  "minimum": 1000,
+                  "maximum": 3600000
+                },
+                "command": {
+                  "description": "[scrubbed 75 chars]",
+                  "type": "string"
+                },
+                "ws": {
+                  "description": "[scrubbed 159 chars]",
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "protocols": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "[scrubbed 29 chars]"
+                      }
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 3 chars]"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "[scrubbed 11 chars]",
+                "[scrubbed 10 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "NotebookEdit",
+            "description": "[scrubbed 619 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "notebook_path": {
+                  "description": "[scrubbed 87 chars]",
+                  "type": "string"
+                },
+                "cell_id": {
+                  "description": "[scrubbed 151 chars]",
+                  "type": "string"
+                },
+                "new_source": {
+                  "description": "[scrubbed 27 chars]",
+                  "type": "string"
+                },
+                "cell_type": {
+                  "description": "[scrubbed 141 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 8 chars]"
+                  ]
+                },
+                "edit_mode": {
+                  "description": "[scrubbed 72 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 7 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                }
+              },
+              "required": [
+                "[scrubbed 13 chars]",
+                "[scrubbed 10 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "PushNotification",
+            "description": "[scrubbed 1362 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "description": "[scrubbed 74 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "type": "string",
+                  "const": "[scrubbed 9 chars]"
+                }
+              },
+              "required": [
+                "[scrubbed 7 chars]",
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Read",
+            "description": "[scrubbed 790 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "[scrubbed 37 chars]",
+                  "type": "string"
+                },
+                "offset": {
+                  "description": "[scrubbed 92 chars]",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "limit": {
+                  "description": "[scrubbed 83 chars]",
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "pages": {
+                  "description": "[scrubbed 113 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 9 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "RemoteTrigger",
+            "description": "[scrubbed 2834 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 22 chars]",
+                    "[scrubbed 9 chars]",
+                    "[scrubbed 11 chars]"
+                  ]
+                },
+                "trigger_id": {
+                  "description": "[scrubbed 44 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 8 chars]"
+                },
+                "session_id": {
+                  "description": "[scrubbed 79 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 8 chars]"
+                },
+                "cursor": {
+                  "description": "[scrubbed 57 chars]",
+                  "type": "string",
+                  "maxLength": 1024
+                },
+                "body": {
+                  "description": "[scrubbed 48 chars]",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {}
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ReportFindings",
+            "description": "[scrubbed 574 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "level": {
+                  "description": "[scrubbed 30 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 3 chars]"
+                  ]
+                },
+                "findings": {
+                  "description": "[scrubbed 60 chars]",
+                  "maxItems": 32,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "file": {
+                        "description": "[scrubbed 48 chars]",
+                        "type": "string"
+                      },
+                      "line": {
+                        "description": "[scrubbed 37 chars]",
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "summary": {
+                        "description": "[scrubbed 36 chars]",
+                        "type": "string"
+                      },
+                      "short_summary": {
+                        "description": "[scrubbed 96 chars]",
+                        "type": "string",
+                        "maxLength": 60
+                      },
+                      "failure_scenario": {
+                        "description": "[scrubbed 42 chars]",
+                        "type": "string"
+                      },
+                      "category": {
+                        "description": "[scrubbed 110 chars]",
+                        "type": "string",
+                        "maxLength": 40
+                      },
+                      "verdict": {
+                        "description": "[scrubbed 57 chars]",
+                        "type": "string",
+                        "enum": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 9 chars]"
+                        ]
+                      },
+                      "outcome": {
+                        "description": "[scrubbed 78 chars]",
+                        "type": "string",
+                        "enum": [
+                          "[scrubbed 5 chars]",
+                          "[scrubbed 7 chars]",
+                          "[scrubbed 16 chars]"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 4 chars]",
+                      "[scrubbed 7 chars]",
+                      "[scrubbed 16 chars]"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "[scrubbed 8 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ScheduleWakeup",
+            "description": "[scrubbed 3148 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "delaySeconds": {
+                  "description": "[scrubbed 98 chars]",
+                  "type": "number"
+                },
+                "reason": {
+                  "description": "[scrubbed 136 chars]",
+                  "type": "string"
+                },
+                "prompt": {
+                  "description": "[scrubbed 355 chars]",
+                  "type": "string"
+                },
+                "stop": {
+                  "description": "[scrubbed 154 chars]",
+                  "type": "boolean"
+                },
+                "noop": {
+                  "description": "[scrubbed 307 chars]",
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "SendFeedback",
+            "description": "[scrubbed 3467 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "description": "[scrubbed 30 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 18 chars]"
+                  ]
+                },
+                "title": {
+                  "description": "[scrubbed 46 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "details": {
+                  "description": "[scrubbed 424 chars]",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "area": {
+                  "description": "[scrubbed 135 chars]",
+                  "type": "string"
+                },
+                "failure_mode": {
+                  "description": "[scrubbed 240 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 21 chars]",
+                    "[scrubbed 19 chars]",
+                    "[scrubbed 12 chars]",
+                    "[scrubbed 22 chars]",
+                    "[scrubbed 16 chars]",
+                    "[scrubbed 32 chars]",
+                    "[scrubbed 18 chars]",
+                    "[scrubbed 9 chars]",
+                    "[scrubbed 15 chars]",
+                    "[scrubbed 14 chars]",
+                    "[scrubbed 18 chars]",
+                    "[scrubbed 18 chars]",
+                    "[scrubbed 19 chars]",
+                    "[scrubbed 19 chars]",
+                    "[scrubbed 14 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                },
+                "task_category": {
+                  "description": "[scrubbed 158 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 9 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 7 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 5 chars]"
+                  ]
+                }
+              },
+              "required": [
+                "[scrubbed 4 chars]",
+                "[scrubbed 5 chars]",
+                "[scrubbed 7 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "SendMessage",
+            "description": "[scrubbed 4259 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "to": {
+                  "description": "[scrubbed 155 chars]",
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "[scrubbed 10 chars]"
+                    },
+                    {
+                      "pattern": "[scrubbed 15 chars]"
+                    }
+                  ]
+                },
+                "summary": {
+                  "description": "[scrubbed 167 chars]",
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "message": {
+                  "default": "[scrubbed 0 chars]",
+                  "description": "[scrubbed 247 chars]",
+                  "type": "string"
+                },
+                "notify_when_idle": {
+                  "description": "[scrubbed 289 chars]",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "[scrubbed 2 chars]",
+                "[scrubbed 7 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "ShareOnboardingGuide",
+            "description": "[scrubbed 451 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "description": "[scrubbed 287 chars]",
+                  "default": "[scrubbed 5 chars]",
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 5 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                },
+                "short_code": {
+                  "description": "[scrubbed 169 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 21 chars]"
+                }
+              },
+              "required": [
+                "[scrubbed 4 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Skill",
+            "description": "[scrubbed 1417 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "skill": {
+                  "description": "[scrubbed 71 chars]",
+                  "type": "string"
+                },
+                "args": {
+                  "description": "[scrubbed 32 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 5 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "TaskStop",
+            "description": "[scrubbed 378 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "task_id": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                },
+                "shell_id": {
+                  "description": "[scrubbed 31 chars]",
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "WebFetch",
+            "description": "[scrubbed 651 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "url": {
+                  "description": "[scrubbed 29 chars]",
+                  "type": "string",
+                  "format": "[scrubbed 3 chars]"
+                },
+                "prompt": {
+                  "description": "[scrubbed 40 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 3 chars]",
+                "[scrubbed 6 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "WebSearch",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "query": {
+                  "description": "[scrubbed 23 chars]",
+                  "type": "string",
+                  "minLength": 2
+                },
+                "allowed_domains": {
+                  "description": "[scrubbed 46 chars]",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "blocked_domains": {
+                  "description": "[scrubbed 47 chars]",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "[scrubbed 5 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Workflow",
+            "description": "[scrubbed 3480 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "script": {
+                  "description": "[scrubbed 207 chars]",
+                  "type": "string",
+                  "maxLength": 524288
+                },
+                "name": {
+                  "description": "[scrubbed 105 chars]",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "[scrubbed 68 chars]",
+                  "type": "string"
+                },
+                "title": {
+                  "description": "[scrubbed 62 chars]",
+                  "type": "string"
+                },
+                "args": {
+                  "description": "[scrubbed 280 chars]"
+                },
+                "scriptPath": {
+                  "description": "[scrubbed 329 chars]",
+                  "type": "string"
+                },
+                "resumeFromRunId": {
+                  "description": "[scrubbed 251 chars]",
+                  "type": "string",
+                  "pattern": "[scrubbed 18 chars]"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "Write",
+            "description": "[scrubbed 240 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "file_path": {
+                  "description": "[scrubbed 71 chars]",
+                  "type": "string"
+                },
+                "content": {
+                  "description": "[scrubbed 32 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 9 chars]",
+                "[scrubbed 7 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Ddnrr__jrfibryrqpca",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Ddnrr__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 469 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Vclvgnlqc__jrfibryrqpca",
+            "description": "[scrubbed 342 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Vclvgnlqc__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 477 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_kmrCwmz__jrfibryrqpca",
+            "description": "[scrubbed 342 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_kmrCwmz__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 473 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Rbf__jrfibryrqpca",
+            "description": "[scrubbed 330 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Rbf__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 465 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Dsorf__jrfibryrqpca",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Dsorf__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 469 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_FyPCAA__jrfibryrqpca",
+            "description": "[scrubbed 341 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_FyPCAA__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 471 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__arcif",
+            "description": "[scrubbed 64 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "batch": {
+                  "type": "array"
+                },
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "create": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]"
+                  ]
+                },
+                "verbose": {
+                  "type": "boolean"
+                },
+                "opId": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__ejjutx",
+            "description": "[scrubbed 77 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "object": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 9 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 4 chars]"
+                  ]
+                },
+                "engine": {
+                  "type": "string"
+                },
+                "payload": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "verbose": {
+                  "type": "boolean"
+                },
+                "opId": {
+                  "type": "string"
+                },
+                "artifact": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 6 chars]",
+                "[scrubbed 7 chars]"
+              ]
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__yzfcmo",
+            "description": "[scrubbed 241 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "object",
+                  "properties": {
+                    "object": {
+                      "type": "string",
+                      "enum": [
+                        "[scrubbed 7 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 9 chars]"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "engine": {
+                  "type": "string"
+                },
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "payload": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "verbose": {
+                  "type": "boolean"
+                },
+                "opId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 3 chars]"
+              ]
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__uwbxbe",
+            "description": "[scrubbed 254 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "file": {
+                  "type": "string"
+                },
+                "format": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 8 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 3 chars]",
+                    "[scrubbed 6 chars]"
+                  ]
+                },
+                "paper": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "maxBytes": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 11534336
+                }
+              },
+              "required": [
+                "[scrubbed 9 chars]",
+                "[scrubbed 4 chars]",
+                "[scrubbed 6 chars]"
+              ]
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__lxgez",
+            "description": "[scrubbed 180 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "description": "[scrubbed 164 chars]"
+                }
+              }
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__ogufq",
+            "description": "[scrubbed 69 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "object": {
+                  "type": "string",
+                  "enum": [
+                    "[scrubbed 9 chars]"
+                  ]
+                },
+                "payload": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__oygs",
+            "description": "[scrubbed 221 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "object",
+                  "properties": {
+                    "object": {
+                      "type": "string",
+                      "enum": [
+                        "[scrubbed 7 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 9 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 4 chars]"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "engine": {
+                  "type": "string"
+                },
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "payload": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "[scrubbed 3 chars]"
+              ]
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Qrobvv_Fbuo__donumj",
+            "description": "[scrubbed 69 chars]",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "ref": {
+                  "type": "object",
+                  "properties": {
+                    "object": {
+                      "type": "string",
+                      "enum": [
+                        "[scrubbed 7 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 4 chars]",
+                        "[scrubbed 9 chars]",
+                        "[scrubbed 4 chars]"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 6 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "engine": {
+                  "type": "string"
+                },
+                "payload": {
+                  "anyOf": [
+                    {
+                      "type": "object"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "container": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "[scrubbed 4 chars]",
+                    "[scrubbed 2 chars]"
+                  ]
+                },
+                "verbose": {
+                  "type": "boolean"
+                },
+                "opId": {
+                  "type": "string"
+                },
+                "answering": {
+                  "type": "string",
+                  "maxLength": 64
+                }
+              },
+              "required": [
+                "[scrubbed 3 chars]",
+                "[scrubbed 7 chars]"
+              ]
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Svtfvzib_Ftfwds__jrfibryrqpca",
+            "description": "[scrubbed 350 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Svtfvzib_Ftfwds__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 489 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Djrspol_rk__jrfibryrqpca",
+            "description": "[scrubbed 340 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Djrspol_rk__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 479 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Xmatd__jrfibryrqpca",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Xmatd__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 469 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Ghtmseqoi__jrfibryrqpca",
+            "description": "[scrubbed 341 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Ghtmseqoi__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 477 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Emttf__jrfibryrqpca",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Emttf__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 469 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_ClhRjm__jrfibryrqpca",
+            "description": "[scrubbed 336 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_ClhRjm__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 471 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_MebUzym__jrfibryrqpca",
+            "description": "[scrubbed 338 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_MebUzym__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 473 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_XqwzuUhmwky_zc_ClhRjm__jrfibryrqpca",
+            "description": "[scrubbed 351 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_XqwzuUhmwky_zc_ClhRjm__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 501 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Kisbumbr__jrfibryrqpca",
+            "description": "[scrubbed 340 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Kisbumbr__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 475 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Cqwfki__jrfibryrqpca",
+            "description": "[scrubbed 336 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Cqwfki__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 471 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jtceupt__jrfibryrqpca",
+            "description": "[scrubbed 338 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jtceupt__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 473 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Kunsvfptl_3b0__jrfibryrqpca",
+            "description": "[scrubbed 356 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Kunsvfptl_3b0__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 485 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_yjntgj_uav__jrfibryrqpca",
+            "description": "[scrubbed 340 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_yjntgj_uav__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 479 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Yunjnu__jrfibryrqpca",
+            "description": "[scrubbed 336 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Yunjnu__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 471 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_DbqMre__jrfibryrqpca",
+            "description": "[scrubbed 343 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_DbqMre__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 471 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_NhskhiGev__jrfibryrqpca",
+            "description": "[scrubbed 342 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_NhskhiGev__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 477 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Tvfsj__jrfibryrqpca",
+            "description": "[scrubbed 334 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Tvfsj__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 469 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_JcsiNfzhj_uav__jrfibryrqpca",
+            "description": "[scrubbed 353 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_JcsiNfzhj_uav__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 485 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Eikv__jrfibryrqpca",
+            "description": "[scrubbed 336 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Eikv__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 477 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Kqkzs__jrfibryrqpca",
+            "description": "[scrubbed 353 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Kqkzs__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 479 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_ICX__jrfibryrqpca",
+            "description": "[scrubbed 370 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_ICX__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 475 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_ICX_5__jrfibryrqpca",
+            "description": "[scrubbed 353 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_ICX_5__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 481 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Lgqc__jrfibryrqpca",
+            "description": "[scrubbed 351 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Lgqc__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 477 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Jzlfzpei__jrfibryrqpca",
+            "description": "[scrubbed 359 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Jzlfzpei__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 485 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Cwrprc__jrfibryrqpca",
+            "description": "[scrubbed 364 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc_Cwrprc__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 481 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc-GCY__jrfibryrqpca",
+            "description": "[scrubbed 357 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            }
+          },
+          {
+            "name": "mcp__qlldbq_co_Jrrc-GCY__vmifotnk_vxfgsetturtcei",
+            "description": "[scrubbed 475 chars]",
+            "input_schema": {
+              "$schema": "[scrubbed 44 chars]",
+              "type": "object",
+              "properties": {
+                "callback_url": {
+                  "description": "[scrubbed 126 chars]",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 12 chars]"
+              ],
+              "additionalProperties": false
+            }
+          }
+        ],
+        "metadata": {
+          "user_id": "{\"device_id\":\"8167f8e37860e3033678bf54fd8553178167f8e37860e3033678bf54fd855317\",\"account_uuid\":\"dd3f4ed4-aac8-407d-c18d-d562af7a987f\",\"session_id\":\"5c681d9c-acc5-02ef-e66f-018e8a0c7a53\"}"
+        },
+        "max_tokens": 128000,
+        "thinking": {
+          "type": "adaptive"
+        },
+        "context_management": {
+          "edits": [
+            {
+              "type": "clear_thinking_20251015",
+              "keep": "[scrubbed 3 chars]"
+            }
+          ]
+        },
+        "safeguards": [
+          {
+            "type": "dangerous_tool_use",
+            "classifier_context": {
+              "v": 1,
+              "permission_mode": "[scrubbed 4 chars]",
+              "platform": "[scrubbed 5 chars]",
+              "live_cwd": "[scrubbed 12 chars]",
+              "home_dir": "[scrubbed 12 chars]",
+              "rule_roots": {
+                "userSettings": "[scrubbed 20 chars]",
+                "projectSettings": "[scrubbed 12 chars]",
+                "localSettings": "[scrubbed 12 chars]",
+                "flagSettings": "[scrubbed 12 chars]",
+                "policySettings": "[scrubbed 12 chars]",
+                "cliArg": "[scrubbed 12 chars]",
+                "command": "[scrubbed 12 chars]",
+                "session": "[scrubbed 12 chars]",
+                "toolsNarrowing": "[scrubbed 12 chars]",
+                "mcpServerPolicy": "[scrubbed 12 chars]",
+                "hostCredential": "[scrubbed 12 chars]"
+              },
+              "trusted_directories": {
+                "primary": {
+                  "path": "[scrubbed 12 chars]",
+                  "resolved": [
+                    "[scrubbed 12 chars]"
+                  ]
+                },
+                "additional": [],
+                "network": [],
+                "block_reads_outside_working_directories": false
+              },
+              "rules": {
+                "allow": [],
+                "deny": [],
+                "ask": []
+              },
+              "auto_mode": {
+                "allow": [],
+                "soft_deny": [],
+                "hard_deny": [],
+                "environment": []
+              },
+              "artifact_consent_holdback": true,
+              "case_insensitive_paths": false,
+              "restricted": false,
+              "is_remote_mode": false,
+              "classify_all_shell": false,
+              "user_identity": "[scrubbed 6 chars]",
+              "git_state": {
+                "cwd": "[scrubbed 12 chars]",
+                "root": null,
+                "branch": null,
+                "default_branch": null,
+                "status": null,
+                "visibility": {
+                  "origin": null,
+                  "push_remote": null,
+                  "remotes": [],
+                  "visibility_cache": []
+                },
+                "error": "[scrubbed 10 chars]"
+              },
+              "artifacts": {
+                "by_slug": {},
+                "by_path": {},
+                "live_docs": [],
+                "room_armed": [],
+                "type_reads": {},
+                "session": {
+                  "frame_env": "[scrubbed 4 chars]",
+                  "viewer_origin": "[scrubbed 17 chars]",
+                  "short_links": true,
+                  "ant_build": false,
+                  "comments_in_schema": true,
+                  "handlers": false,
+                  "room_client": false,
+                  "eval_stub": false,
+                  "scratchpad_dir": "[scrubbed 77 chars]",
+                  "tool_results_dir": "[scrubbed 92 chars]",
+                  "toolset": true,
+                  "live_edit": false,
+                  "live_doc_stream": false,
+                  "live_paths_schema": false,
+                  "copy_from": true,
+                  "db_str_replace": true,
+                  "types_on": true,
+                  "five_class_asks": true,
+                  "watch_rail": "[scrubbed 4 chars]",
+                  "auto_react": true
+                }
+              }
+            }
+          }
+        ],
+        "output_config": {
+          "effort": "medium"
+        },
+        "stream": true
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 30 Sep 2026 12:28:28 GMT",
+      "content-type": "text/event-stream; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cache-control": "no-cache",
+      "anthropic-ratelimit-unified-5h-status": "mjqlfdq",
+      "anthropic-ratelimit-unified-representative-claim": "plhd_nejq",
+      "anthropic-ratelimit-unified-overage-disabled-reason": "yjq_iu_jrnpmgd",
+      "anthropic-ratelimit-unified-overage-status": "tdwcygtl",
+      "anthropic-ratelimit-unified-reset": "f10625009c",
+      "anthropic-ratelimit-unified-5h-utilization": "2.0d",
+      "anthropic-ratelimit-unified-7d-reset": "f31f771199",
+      "anthropic-ratelimit-unified-5h-reset": "f10625009c",
+      "anthropic-ratelimit-unified-7d-status": "mjqlfdq",
+      "anthropic-ratelimit-unified-fallback-percentage": "2.3",
+      "anthropic-ratelimit-unified-fallback": "xopiezajp",
+      "anthropic-ratelimit-unified-7d-utilization": "2.a5",
+      "anthropic-ratelimit-unified-status": "mjqlfdq",
+      "server": "cloudflare",
+      "request-id": "req_850OxAc0E5C5yx5ehBDdiBVC",
+      "strict-transport-security": "ndb-ekj=e4e9e4f3; ryqslsfJfkAwitdzw; jckdium",
+      "anthropic-organization-id": "e2e33e48-f40e-492e-9d23-fd0b823fb7e7",
+      "anthropic-workspace-id": "nodest_08HxamLpI7p4tu2bTrpFtcoW",
+      "traceresponse": "6c-92063a224fc0b030ae6f3bac038ddb71-b38293056f322b5d-19",
+      "vary": "Accept-Encoding",
+      "x-robots-tag": "ciqh",
+      "content-security-policy": "jtytvfa-gxn 'ciqh'; ulgvn-slpklorkj 'ciqh'",
+      "cf-cache-status": "LNKGAZZ",
+      "cf-ray": "fbf869a4508d7df6-FOP"
+    },
+    "firstByteMs": 1236.6,
+    "totalMs": 4616.4,
+    "chunkCount": 12,
+    "body": {
+      "kind": "sse",
+      "events": [
+        {
+          "at": 1236.9,
+          "event": "message_start",
+          "data": {
+            "type": "message_start",
+            "message": {
+              "model": "claude-sonnet-5-5",
+              "id": "msg_011CfZd9ZY171JPqSNnzrUgW",
+              "type": "message",
+              "role": "assistant",
+              "content": [],
+              "container": null,
+              "stop_reason": null,
+              "stop_sequence": null,
+              "stop_details": null,
+              "usage": {
+                "input_tokens": 4,
+                "cache_creation_input_tokens": 7526,
+                "cache_read_input_tokens": 73459,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 7526
+                },
+                "output_tokens": 2,
+                "service_tier": "standard",
+                "inference_geo": "[scrubbed 13 chars]"
+              },
+              "diagnostics": null,
+              "context_management": null
+            }
+          }
+        },
+        {
+          "at": 1236.9,
+          "event": "content_block_start",
+          "data": {
+            "type": "content_block_start",
+            "index": 0,
+            "content_block": {
+              "type": "thinking",
+              "thinking": "[scrubbed 0 chars]",
+              "signature": "[scrubbed 0 chars]"
+            }
+          }
+        },
+        {
+          "at": 1732.6,
+          "event": "ping",
+          "data": {
+            "type": "ping"
+          }
+        },
+        {
+          "at": 1732.6,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "thinking_delta",
+              "thinking": "[scrubbed 0 chars]",
+              "estimated_tokens": 50
+            }
+          }
+        },
+        {
+          "at": 2049.1,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "thinking_delta",
+              "thinking": "[scrubbed 0 chars]",
+              "estimated_tokens": null
+            }
+          }
+        },
+        {
+          "at": 2049.5,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "signature_delta",
+              "signature": "[scrubbed 1196 chars]"
+            }
+          }
+        },
+        {
+          "at": 2049.5,
+          "event": "content_block_stop",
+          "data": {
+            "type": "content_block_stop",
+            "index": 0
+          }
+        },
+        {
+          "at": 2049.5,
+          "event": "content_block_start",
+          "data": {
+            "type": "content_block_start",
+            "index": 1,
+            "content_block": {
+              "type": "tool_use",
+              "id": "toolu_01Uawbfqwb1sXgQ28NcKTHWb",
+              "name": "Read",
+              "input": {},
+              "caller": {
+                "type": "direct"
+              }
+            }
+          }
+        },
+        {
+          "at": 2049.5,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 0 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2383.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 1,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 8 chars]"
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_stop",
+          "data": {
+            "type": "content_block_stop",
+            "index": 1
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_start",
+          "data": {
+            "type": "content_block_start",
+            "index": 2,
+            "content_block": {
+              "type": "tool_use",
+              "id": "toolu_012UivyEk5PMKF311M8V5846",
+              "name": "Bash",
+              "input": {},
+              "caller": {
+                "type": "direct"
+              }
+            }
+          }
+        },
+        {
+          "at": 2387.3,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 0 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2419.8,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2420.2,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2420.2,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2420.2,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2420.2,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 2420.2,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 4 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 7 chars]"
+            }
+          }
+        },
+        {
+          "at": 3125.9,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 2,
+            "delta": {
+              "type": "input_json_delta",
+              "partial_json": "[scrubbed 3 chars]"
+            }
+          }
+        },
+        {
+          "at": 3126.5,
+          "event": "content_block_stop",
+          "data": {
+            "type": "content_block_stop",
+            "index": 2
+          }
+        },
+        {
+          "at": 4615,
+          "event": "message_delta",
+          "data": {
+            "type": "message_delta",
+            "delta": {
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "stop_details": null,
+              "container": null,
+              "safeguard_results": [
+                {
+                  "type": "dangerous_tool_use",
+                  "status": {
+                    "type": "available",
+                    "tool_uses": {
+                      "toolu_012UivyEk5PMKF311M8V5846": {
+                        "type": "evaluated",
+                        "outcome": "[scrubbed 11 chars]"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "usage": {
+              "input_tokens": 4,
+              "cache_creation_input_tokens": 7526,
+              "cache_read_input_tokens": 73459,
+              "output_tokens": 264,
+              "output_tokens_details": {
+                "thinking_tokens": 58
+              },
+              "iterations": [
+                {
+                  "input_tokens": 4,
+                  "output_tokens": 264,
+                  "cache_read_input_tokens": 73459,
+                  "cache_creation_input_tokens": 7526,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 7526
+                  },
+                  "type": "message"
+                }
+              ]
+            },
+            "context_management": {
+              "applied_edits": []
+            }
+          }
+        },
+        {
+          "at": 4615,
+          "event": "message_stop",
+          "data": {
+            "type": "message_stop"
+          }
+        }
+      ]
+    }
+  }
+}

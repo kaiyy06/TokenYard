@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "recordedAt": "2026-09-30T12:23:36.761Z",
+  "upstream": "https://api.anthropic.com",
+  "request": {
+    "method": "HEAD",
+    "path": "/api/hello",
+    "headers": {
+      "connection": "keep-alive",
+      "user-agent": "Bun/1.4.3",
+      "accept": "*/*",
+      "host": "127.0.0.1:8788",
+      "accept-encoding": "gzip, deflate, br, zstd"
+    },
+    "body": {
+      "kind": "empty"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 30 Sep 2026 12:23:36 GMT",
+      "content-type": "application/json",
+      "content-length": "20",
+      "connection": "keep-alive",
+      "server-timing": "j-bamojrIghcybqe;tfw=",
+      "server": "cloudflare",
+      "x-robots-tag": "ciqh",
+      "cf-cache-status": "LNKGAZZ",
+      "content-security-policy": "jtytvfa-gxn 'ciqh'; ulgvn-slpklorkj 'ciqh'",
+      "cf-ray": "4bc907acee04342b-FOP"
+    },
+    "firstByteMs": null,
+    "totalMs": 339.1,
+    "chunkCount": 0,
+    "body": {
+      "kind": "empty"
+    }
+  }
+}

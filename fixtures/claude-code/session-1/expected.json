@@ -1,0 +1,30 @@
+{
+  "0003-POST-v1-messages.json": {
+    "model": "claude-sonnet-5-5",
+    "inputTokens": 2,
+    "outputTokens": 19,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 80932
+  },
+  "0004-POST-v1-messages.json": {
+    "model": "claude-sonnet-5-5",
+    "inputTokens": 1193,
+    "outputTokens": 22,
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0
+  },
+  "0005-POST-v1-messages.json": {
+    "model": "claude-sonnet-5-5",
+    "inputTokens": 4,
+    "outputTokens": 264,
+    "cacheReadTokens": 73459,
+    "cacheWriteTokens": 7526
+  },
+  "0029-POST-v1-messages.json": {
+    "model": "claude-sonnet-5-5",
+    "inputTokens": 2770,
+    "outputTokens": 2953,
+    "cacheReadTokens": 90752,
+    "cacheWriteTokens": 0
+  }
+}

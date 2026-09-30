@@ -16,5 +16,13 @@ Hand-written to match the documented wire formats of the Anthropic Messages API 
 OpenAI Chat Completions and Responses APIs. They cover the parsing paths (streamed and plain
 bodies, cached tokens) but are not recordings of a real agent.
 
+## claude-code/session-1/
+
+Recorded from a real Claude Code session and scrubbed, then cut down to six representative
+exchanges: the connectivity check (`HEAD`), a rate-limit `429`, a short reply, a small call, a
+reply that ends in a tool call, and a long stream of about 545 events. Their token counts in
+`expected.json` were read straight from the recorded usage fields.
+
 Recorded fixtures go in `fixtures/<agent>/<scenario>/`, produced with
-`pnpm record` followed by `pnpm scrub`. Review each one before committing.
+`pnpm record` followed by `pnpm scrub`. Review each one before committing: check for names,
+paths and anything else personal, and keep only a few representative exchanges.

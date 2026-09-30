@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "recordedAt": "2026-09-30T12:23:56.904Z",
+  "upstream": "https://api.anthropic.com",
+  "request": {
+    "method": "POST",
+    "path": "/v1/messages?beta=true",
+    "headers": {
+      "accept": "application/json",
+      "authorization": "Bearer sk-ant-oat01-[redacted]",
+      "content-type": "application/json",
+      "user-agent": "claude-cli/2.1.285 (external, cli)",
+      "x-claude-code-session-id": "5c681d9c-acc5-02ef-e66f-018e8a0c7a53",
+      "x-stainless-arch": "x64",
+      "x-stainless-lang": "js",
+      "x-stainless-os": "Linux",
+      "x-stainless-package-version": "0.127.0",
+      "x-stainless-retry-count": "0",
+      "x-stainless-runtime": "node",
+      "x-stainless-runtime-version": "v26.3.0",
+      "x-stainless-timeout": "600",
+      "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,redact-thinking-2026-02-12,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07",
+      "anthropic-dangerous-direct-browser-access": "ikxw",
+      "anthropic-version": "2023-06-01",
+      "x-app": "cli",
+      "connection": "keep-alive",
+      "host": "127.0.0.1:8788",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "content-length": "315"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "claude-sonnet-5-5",
+        "max_tokens": 1,
+        "messages": [
+          {
+            "role": "user",
+            "content": "[scrubbed 5 chars]"
+          }
+        ],
+        "metadata": {
+          "user_id": "{\"device_id\":\"8167f8e37860e3033678bf54fd8553178167f8e37860e3033678bf54fd855317\",\"account_uuid\":\"dd3f4ed4-aac8-407d-c18d-d562af7a987f\",\"session_id\":\"5c681d9c-acc5-02ef-e66f-018e8a0c7a53\"}"
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 429,
+    "headers": {
+      "date": "Wed, 30 Sep 2026 12:23:56 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "x-should-retry": "true",
+      "request-id": "req_245BbTgiHDHORgbUwlXwRDH2",
+      "strict-transport-security": "ndb-ekj=e4e9e4f3; ryqslsfJfkAwitdzw; jckdium",
+      "anthropic-organization-id": "e2e33e48-f40e-492e-9d23-fd0b823fb7e7",
+      "anthropic-workspace-id": "nodest_08HxamLpI7p4tu2bTrpFtcoW",
+      "traceresponse": "6c-49c024713323141bd60a8e18dd2e6646-d116c91f9216e3a0-19",
+      "server": "cloudflare",
+      "vary": "Accept-Encoding",
+      "x-robots-tag": "ciqh",
+      "content-security-policy": "jtytvfa-gxn 'ciqh'; ulgvn-slpklorkj 'ciqh'",
+      "cf-cache-status": "LNKGAZZ",
+      "cf-ray": "b0f7daa1dd724aa7-FOP"
+    },
+    "firstByteMs": 588.6,
+    "totalMs": 590.5,
+    "chunkCount": 1,
+    "body": {
+      "kind": "json",
+      "json": {
+        "type": "error",
+        "error": {
+          "type": "rate_limit_error",
+          "message": "[scrubbed 5 chars]"
+        },
+        "request_id": "req_011CfZcoZRFLAncNhiTyJZX7"
+      }
+    }
+  }
+}

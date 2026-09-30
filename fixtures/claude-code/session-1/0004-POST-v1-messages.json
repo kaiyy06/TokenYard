@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "recordedAt": "2026-09-30T12:28:29.322Z",
+  "upstream": "https://api.anthropic.com",
+  "request": {
+    "method": "POST",
+    "path": "/v1/messages?beta=true",
+    "headers": {
+      "accept": "application/json",
+      "authorization": "Bearer sk-ant-oat01-[redacted]",
+      "content-type": "application/json",
+      "user-agent": "claude-cli/2.1.285 (external, cli)",
+      "x-claude-code-session-id": "5c681d9c-acc5-02ef-e66f-018e8a0c7a53",
+      "x-stainless-arch": "x64",
+      "x-stainless-lang": "js",
+      "x-stainless-os": "Linux",
+      "x-stainless-package-version": "0.127.0",
+      "x-stainless-retry-count": "0",
+      "x-stainless-runtime": "node",
+      "x-stainless-runtime-version": "v26.3.0",
+      "x-stainless-timeout": "600",
+      "anthropic-beta": "claude-code-20250219,oauth-2025-04-20,interleaved-thinking-2025-05-14,redact-thinking-2026-02-12,thinking-token-count-2026-05-13,context-management-2025-06-27,prompt-caching-scope-2026-01-05,mid-conversation-system-2026-04-07,per-turn-control-2026-07-01,advisor-tool-2026-03-01,effort-2025-11-24,structured-outputs-2025-12-15,dangerous-tool-use-2026-09-03",
+      "anthropic-dangerous-direct-browser-access": "ikxw",
+      "anthropic-version": "2023-06-01",
+      "x-app": "cli",
+      "connection": "keep-alive",
+      "host": "127.0.0.1:8788",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "content-length": "4186"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "claude-sonnet-5-5",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "[scrubbed 328 chars]"
+              }
+            ]
+          }
+        ],
+        "system": [
+          {
+            "type": "text",
+            "text": "[scrubbed 70 chars]"
+          },
+          {
+            "type": "text",
+            "text": "[scrubbed 57 chars]"
+          },
+          {
+            "type": "text",
+            "text": "[scrubbed 3059 chars]"
+          }
+        ],
+        "tools": [],
+        "metadata": {
+          "user_id": "{\"device_id\":\"8167f8e37860e3033678bf54fd8553178167f8e37860e3033678bf54fd855317\",\"account_uuid\":\"dd3f4ed4-aac8-407d-c18d-d562af7a987f\",\"session_id\":\"5c681d9c-acc5-02ef-e66f-018e8a0c7a53\"}"
+        },
+        "max_tokens": 128000,
+        "output_config": {
+          "effort": "medium",
+          "format": {
+            "type": "json_schema",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "[scrubbed 5 chars]"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "stream": true
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Wed, 30 Sep 2026 12:28:28 GMT",
+      "content-type": "text/event-stream; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cache-control": "no-cache",
+      "anthropic-ratelimit-unified-5h-status": "mjqlfdq",
+      "anthropic-ratelimit-unified-representative-claim": "plhd_nejq",
+      "anthropic-ratelimit-unified-overage-disabled-reason": "yjq_iu_jrnpmgd",
+      "anthropic-ratelimit-unified-overage-status": "tdwcygtl",
+      "anthropic-ratelimit-unified-reset": "f10625009c",
+      "anthropic-ratelimit-unified-5h-utilization": "2.0d",
+      "anthropic-ratelimit-unified-7d-reset": "f31f771199",
+      "anthropic-ratelimit-unified-5h-reset": "f10625009c",
+      "anthropic-ratelimit-unified-7d-status": "mjqlfdq",
+      "anthropic-ratelimit-unified-fallback-percentage": "2.3",
+      "anthropic-ratelimit-unified-fallback": "xopiezajp",
+      "anthropic-ratelimit-unified-7d-utilization": "2.a5",
+      "anthropic-ratelimit-unified-status": "mjqlfdq",
+      "server": "cloudflare",
+      "request-id": "req_988QhMy4StxcFf40LaWv07Qy",
+      "strict-transport-security": "ndb-ekj=e4e9e4f3; ryqslsfJfkAwitdzw; jckdium",
+      "anthropic-organization-id": "e2e33e48-f40e-492e-9d23-fd0b823fb7e7",
+      "anthropic-workspace-id": "nodest_08HxamLpI7p4tu2bTrpFtcoW",
+      "traceresponse": "6c-b9eef0934ecd8650b911e7f3e479328f-1a32f16bf8c29b20-19",
+      "vary": "Accept-Encoding",
+      "x-robots-tag": "ciqh",
+      "content-security-policy": "jtytvfa-gxn 'ciqh'; ulgvn-slpklorkj 'ciqh'",
+      "cf-cache-status": "LNKGAZZ",
+      "cf-ray": "baf7ea80218ce375-FOP"
+    },
+    "firstByteMs": 1223.6,
+    "totalMs": 1786.2,
+    "chunkCount": 5,
+    "body": {
+      "kind": "sse",
+      "events": [
+        {
+          "at": 1224,
+          "event": "message_start",
+          "data": {
+            "type": "message_start",
+            "message": {
+              "model": "claude-sonnet-5-5",
+              "id": "msg_011CfZd9ZUmtKi1XznWvXnnR",
+              "type": "message",
+              "role": "assistant",
+              "content": [],
+              "container": null,
+              "stop_reason": null,
+              "stop_sequence": null,
+              "stop_details": null,
+              "usage": {
+                "input_tokens": 1193,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 5,
+                "service_tier": "standard",
+                "inference_geo": "[scrubbed 13 chars]"
+              },
+              "diagnostics": null,
+              "context_management": null
+            }
+          }
+        },
+        {
+          "at": 1224,
+          "event": "content_block_start",
+          "data": {
+            "type": "content_block_start",
+            "index": 0,
+            "content_block": {
+              "type": "text",
+              "text": "[scrubbed 0 chars]"
+            }
+          }
+        },
+        {
+          "at": 1224,
+          "event": "ping",
+          "data": {
+            "type": "ping"
+          }
+        },
+        {
+          "at": 1224,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "text_delta",
+              "text": "[scrubbed 10 chars]"
+            }
+          }
+        },
+        {
+          "at": 1777.6,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "text_delta",
+              "text": "[scrubbed 9 chars]"
+            }
+          }
+        },
+        {
+          "at": 1777.6,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "text_delta",
+              "text": "[scrubbed 12 chars]"
+            }
+          }
+        },
+        {
+          "at": 1777.6,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "text_delta",
+              "text": "[scrubbed 5 chars]"
+            }
+          }
+        },
+        {
+          "at": 1778.7,
+          "event": "content_block_delta",
+          "data": {
+            "type": "content_block_delta",
+            "index": 0,
+            "delta": {
+              "type": "text_delta",
+              "text": "[scrubbed 6 chars]"
+            }
+          }
+        },
+        {
+          "at": 1778.7,
+          "event": "content_block_stop",
+          "data": {
+            "type": "content_block_stop",
+            "index": 0
+          }
+        },
+        {
+          "at": 1784.9,
+          "event": "message_delta",
+          "data": {
+            "type": "message_delta",
+            "delta": {
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "stop_details": null,
+              "container": null,
+              "safeguard_results": []
+            },
+            "usage": {
+              "input_tokens": 1193,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 0,
+              "output_tokens": 22,
+              "output_tokens_details": {
+                "thinking_tokens": 0
+              },
+              "iterations": [
+                {
+                  "input_tokens": 1193,
+                  "output_tokens": 22,
+                  "cache_read_input_tokens": 0,
+                  "cache_creation_input_tokens": 0,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 0
+                  },
+                  "type": "message"
+                }
+              ]
+            },
+            "context_management": {
+              "applied_edits": []
+            }
+          }
+        },
+        {
+          "at": 1784.9,
+          "event": "message_stop",
+          "data": {
+            "type": "message_stop"
+          }
+        }
+      ]
+    }
+  }
+}
