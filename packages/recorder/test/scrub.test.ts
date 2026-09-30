@@ -130,6 +130,32 @@ describe("scrubCapture", () => {
     expect(fixture.response?.headers["anthropic-organization-id"]).not.toBe("org-abc123");
   });
 
+  it("hides account usage headers and connected service names", () => {
+    const base = capture();
+    const tools = [{ name: "Bash" }, { name: "mcp__claude_ai_Asana__get_task" }];
+    const c: Capture = {
+      ...base,
+      request: {
+        ...base.request,
+        body: captureBody(Buffer.from(JSON.stringify({ ...request, tools }))),
+      },
+      response: {
+        ...(base.response as NonNullable<Capture["response"]>),
+        headers: {
+          "anthropic-ratelimit-unified-5h-utilization": "0.57",
+          "anthropic-ratelimit-requests-limit": "1000",
+        },
+      },
+    };
+    const out = scrubCapture(c, createPseudonymizer(Buffer.from("fixed-salt")));
+    expect(out.response?.headers["anthropic-ratelimit-unified-5h-utilization"]).not.toBe("0.57");
+    expect(out.response?.headers["anthropic-ratelimit-requests-limit"]).toBe("1000");
+    const json = (out.request.body as { json: { tools: { name: string }[] } }).json;
+    expect(json.tools[0]?.name).toBe("Bash");
+    expect(json.tools[1]?.name).toMatch(/^mcp__[a-z]+_[a-z]+_[A-Za-z]+__[a-z]+_[a-z]+$/);
+    expect(JSON.stringify(out)).not.toContain("Asana");
+  });
+
   it("splits the event stream and times each event by its chunk", () => {
     const body = fixture.response?.body;
     if (body?.kind !== "sse") throw new Error("expected sse");

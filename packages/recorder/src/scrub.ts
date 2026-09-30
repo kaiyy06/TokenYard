@@ -78,6 +78,9 @@ const KEEP_HEADERS = new Set([
 ]);
 const KEEP_HEADER_PREFIXES = ["x-stainless-", "anthropic-ratelimit-", "x-ratelimit-"];
 
+/** Subscription usage and reset times describe one person's account, so they are hidden. */
+const HIDDEN_HEADER_PREFIXES = ["anthropic-ratelimit-unified-"];
+
 /** Words kept when pseudonymizing, so id formats stay readable. */
 const ID_WORDS = new Set([
   "user",
@@ -141,6 +144,8 @@ function scrubOpaque(value: unknown): unknown {
 export function scrubJson(value: unknown, pseudonymize: Pseudonymize, key?: string): unknown {
   if (typeof value === "string") {
     if (key !== undefined && PSEUDONYM_KEYS.has(key)) return pseudonymize(value);
+    // Connector tool names (`mcp__<service>__<tool>`) reveal which services someone has connected.
+    if (key === "name" && value.startsWith("mcp__")) return `mcp__${pseudonymize(value.slice(5))}`;
     if (key !== undefined && (KEEP_KEYS.has(key) || ID_KEY.test(key))) return value;
     return scrubbed(value);
   }
@@ -159,7 +164,8 @@ export function scrubJson(value: unknown, pseudonymize: Pseudonymize, key?: stri
 
 export function scrubHeaders(headers: HeaderMap, pseudonymize: Pseudonymize): HeaderMap {
   const keep = (name: string) =>
-    KEEP_HEADERS.has(name) || KEEP_HEADER_PREFIXES.some((prefix) => name.startsWith(prefix));
+    !HIDDEN_HEADER_PREFIXES.some((prefix) => name.startsWith(prefix)) &&
+    (KEEP_HEADERS.has(name) || KEEP_HEADER_PREFIXES.some((prefix) => name.startsWith(prefix)));
   const scrubValue = (name: string, value: string) =>
     keep(name) || value.endsWith(REDACTED) ? value : pseudonymize(value);
   const out: HeaderMap = {};
