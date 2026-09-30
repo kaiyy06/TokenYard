@@ -139,7 +139,8 @@ describe("golden fixtures", () => {
       const res = await fetch(`${gateway.url}${fixture.request.path}`, {
         method: fixture.request.method,
         headers: sent as Record<string, string>,
-        body: requestBody,
+        // GET and HEAD cannot carry a body.
+        ...(!["GET", "HEAD"].includes(fixture.request.method) && { body: requestBody }),
       });
       const received = Buffer.from(await res.arrayBuffer());
       await exchanged;
