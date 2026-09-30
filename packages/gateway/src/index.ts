@@ -1,4 +1,14 @@
+export type { LoadPricingOptions, ModelPrice } from "./pricing.js";
+export { loadPricing, normalizeModelId, PricingTable, parseOpenRouterModels } from "./pricing.js";
 export type { Exchange, Gateway, GatewayOptions } from "./proxy.js";
 export { startGateway } from "./proxy.js";
+export { createUsageRecorder, isInferencePath } from "./recorder.js";
+export { openSqliteStore } from "./sqlite.js";
+export type { ModelStats, Stats } from "./stats.js";
+export { formatStats, parseSince, summarize, toCsv, toJsonl } from "./stats.js";
+export type { TimeRange, UsageRecord, UsageStore } from "./store.js";
+export { createMemoryStore } from "./store.js";
 export type { Provider, Upstreams } from "./upstream.js";
 export { DEFAULT_UPSTREAMS, detectProvider } from "./upstream.js";
+export type { TapResult, Usage } from "./usage.js";
+export { SseParser, UsageTap } from "./usage.js";

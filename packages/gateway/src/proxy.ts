@@ -8,6 +8,10 @@ import {
 import { request as httpsRequest } from "node:https";
 import type { AddressInfo } from "node:net";
 import { DEFAULT_UPSTREAMS, detectProvider, type Provider, type Upstreams } from "./upstream.js";
+import { readRequestInfo, type TapResult, type Usage, UsageTap } from "./usage.js";
+
+/** Request bodies larger than this are forwarded as usual but not inspected for the model. */
+const MAX_INSPECTED_REQUEST_BYTES = 16 * 1024 * 1024;
 
 /** What the gateway saw for one request, handed to `onExchange` once it has finished. */
 export interface Exchange {
@@ -20,6 +24,15 @@ export interface Exchange {
   readonly totalMs: number;
   /** The error that ended the exchange early, if any. */
   readonly error?: string;
+  /** Start of the exchange, in epoch milliseconds. */
+  readonly startedAt: number;
+  /** The model the agent asked for, read from the request body. */
+  readonly requestModel?: string;
+  /** The model the response says answered. */
+  readonly model?: string;
+  readonly stream?: boolean;
+  /** Token counts read from the response, when it carried any. */
+  readonly usage?: Usage;
 }
 
 export interface GatewayOptions {
@@ -66,6 +79,7 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
   const upstreams: Upstreams = { ...DEFAULT_UPSTREAMS, ...options.upstreams };
 
   function handle(req: IncomingMessage, res: ServerResponse): void {
+    const startedAt = Date.now();
     const started = performance.now();
     const elapsed = () => Math.round((performance.now() - started) * 10) / 10;
     const method = req.method ?? "GET";
@@ -79,10 +93,24 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
     let status = 0;
     let firstByteMs: number | null = null;
     let finished = false;
-    const finish = (error?: string) => {
+
+    // A copy of the request body, only to read the model and streaming flag from it.
+    const requestParts: Buffer[] = [];
+    let requestBytes = 0;
+    req.on("data", (chunk: Buffer) => {
+      requestBytes += chunk.length;
+      if (requestBytes <= MAX_INSPECTED_REQUEST_BYTES) requestParts.push(chunk);
+    });
+
+    const finish = (error?: string, tapped: TapResult = {}) => {
       if (finished) return;
       finished = true;
       try {
+        const info =
+          requestBytes <= MAX_INSPECTED_REQUEST_BYTES && !req.headers["content-encoding"]
+            ? readRequestInfo(Buffer.concat(requestParts))
+            : {};
+        const model = tapped.model ?? info.model;
         options.onExchange?.({
           provider,
           method,
@@ -90,7 +118,12 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
           status,
           firstByteMs,
           totalMs: elapsed(),
+          startedAt,
           ...(error !== undefined && { error }),
+          ...(info.model !== undefined && { requestModel: info.model }),
+          ...(model !== undefined && { model }),
+          ...(info.stream !== undefined && { stream: info.stream }),
+          ...(tapped.usage && { usage: tapped.usage }),
         });
       } catch {
         // Observers must never affect the request.
@@ -125,8 +158,18 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
       res.writeHead(status, upstreamRes.statusMessage, forwardHeaders(upstreamRes.headers));
       res.flushHeaders();
 
+      // Successful responses are read for usage as they stream past.
+      const tap =
+        status >= 200 && status < 300
+          ? new UsageTap(provider, {
+              contentType: upstreamRes.headers["content-type"],
+              contentEncoding: upstreamRes.headers["content-encoding"],
+            })
+          : undefined;
+
       upstreamRes.on("data", (chunk: Buffer) => {
         firstByteMs ??= elapsed();
+        tap?.write(chunk);
         if (!res.write(chunk)) {
           upstreamRes.pause();
           res.once("drain", () => upstreamRes.resume());
@@ -134,7 +177,12 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
       });
       upstreamRes.on("end", () => {
         res.end();
-        finish();
+        if (tap)
+          void tap.end().then(
+            (tapped) => finish(undefined, tapped),
+            () => finish(),
+          );
+        else finish();
       });
       upstreamRes.on("error", (err) => {
         res.destroy(err);
