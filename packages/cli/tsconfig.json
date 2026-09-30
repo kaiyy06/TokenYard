@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "paths": { "@tokenyard/gateway": ["../gateway/src/index.ts"] }
+  },
+  "include": ["src", "test"]
+}

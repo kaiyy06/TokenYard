@@ -1,0 +1,31 @@
+{
+  "name": "tokenyard",
+  "version": "0.0.0",
+  "description": "A local gateway for coding agents that tracks what they spend.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiyy06/TokenYard.git",
+    "directory": "packages/cli"
+  },
+  "type": "module",
+  "bin": {
+    "tokenyard": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@tokenyard/gateway": "workspace:*"
+  },
+  "devDependencies": {
+    "tsdown": "0.23.0"
+  }
+}
