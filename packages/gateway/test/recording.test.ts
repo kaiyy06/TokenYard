@@ -32,29 +32,23 @@ async function setup(respond: Parameters<typeof createServer>[1]) {
   const pricing = new PricingTable({
     "claude-sonnet-5-5": { input: 2e-6, output: 1e-5, cacheRead: 2e-7, cacheWrite: 2.5e-6 },
   });
+  const record = createUsageRecorder(store, pricing);
+  let notify: (record: UsageRecord) => void = () => {};
   const recorded = new Promise<UsageRecord>((resolve) => {
-    const record = createUsageRecorder(store, pricing);
-    startGateway({
-      port: 0,
-      upstreams: { anthropic },
-      onExchange: (e) => {
-        record(e);
-        resolve(store.list()[0] as UsageRecord);
-      },
-    }).then((gateway) => {
-      cleanup.push(() => gateway.close());
-      gatewayUrl = gateway.url;
-    });
+    notify = resolve;
   });
-  // Wait for the gateway to be listening before returning.
-  while (!gatewayUrl) await new Promise((resolve) => setTimeout(resolve, 5));
-  return { url: gatewayUrl, recorded, store };
+  const gateway = await startGateway({
+    port: 0,
+    upstreams: { anthropic },
+    onExchange: (e) => {
+      record(e);
+      const first = store.list()[0];
+      if (first) notify(first);
+    },
+  });
+  cleanup.push(() => gateway.close());
+  return { url: gateway.url, recorded, store };
 }
-
-let gatewayUrl = "";
-afterEach(() => {
-  gatewayUrl = "";
-});
 
 describe("usage recording", () => {
   it("records tokens, model and cost for a streamed response without changing it", async () => {
