@@ -3,6 +3,14 @@ export { loadPricing, normalizeModelId, PricingTable, parseOpenRouterModels } fr
 export type { Exchange, Gateway, GatewayOptions } from "./proxy.js";
 export { startGateway } from "./proxy.js";
 export { createUsageRecorder, isInferencePath } from "./recorder.js";
+export type { Classification, ClassifierOptions } from "./routing/classifier.js";
+export { buildState, createClassifier, QUESTIONS } from "./routing/classifier.js";
+export type { RoutingSettings } from "./routing/config.js";
+export { DEFAULT_SETTINGS, parseRoutingSettings } from "./routing/config.js";
+export type { Router, RouterConfig, RoutingDecision, RoutingMode } from "./routing/router.js";
+export { createRouter } from "./routing/router.js";
+export type { SessionStore } from "./routing/session.js";
+export { createSessionStore } from "./routing/session.js";
 export { openSqliteStore } from "./sqlite.js";
 export type { ModelStats, Stats } from "./stats.js";
 export { formatStats, parseSince, summarize, toCsv, toJsonl } from "./stats.js";
