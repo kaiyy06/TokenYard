@@ -180,11 +180,13 @@ export class UsageTap {
   constructor(provider: Provider, headers: TapHeaders) {
     this.#provider = provider;
     const type = headers.contentType?.toLowerCase() ?? "";
-    this.#mode = type.includes("text/event-stream")
-      ? "sse"
-      : type.includes("json")
-        ? "json"
-        : "none";
+    // Codex's ChatGPT backend streams events without sending any content-type.
+    this.#mode =
+      type === "" || type.includes("text/event-stream")
+        ? "sse"
+        : type.includes("json")
+          ? "json"
+          : "none";
     if (this.#mode === "sse") {
       this.#sse = new SseParser((data) => this.#event(data));
     }
