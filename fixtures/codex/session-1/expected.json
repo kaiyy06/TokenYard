@@ -1,0 +1,23 @@
+{
+  "0002-POST-responses.json": {
+    "model": "gpt-6.1-sol",
+    "inputTokens": 8098,
+    "outputTokens": 14,
+    "cacheReadTokens": 4480,
+    "cacheWriteTokens": 0
+  },
+  "0003-POST-responses.json": {
+    "model": "gpt-6.1-sol",
+    "inputTokens": 1089,
+    "outputTokens": 35,
+    "cacheReadTokens": 6784,
+    "cacheWriteTokens": 0
+  },
+  "0006-POST-responses.json": {
+    "model": "gpt-6.1-sol",
+    "inputTokens": 194,
+    "outputTokens": 137,
+    "cacheReadTokens": 12416,
+    "cacheWriteTokens": 0
+  }
+}

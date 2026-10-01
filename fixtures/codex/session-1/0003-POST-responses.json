@@ -1,0 +1,1932 @@
+{
+  "version": 1,
+  "recordedAt": "2026-10-01T11:40:51.987Z",
+  "upstream": "https://chatgpt.com",
+  "request": {
+    "method": "POST",
+    "path": "/responses",
+    "headers": {
+      "x-codex-beta-features": "pgfhpm_hbcpdtbgeg_h1",
+      "x-codex-window-id": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5:0",
+      "x-codex-turn-metadata": "{\"deyhwblcmomf_id\":\"15f0f491-1e21-4e47-e47b-c190860e9c3d\",\"session_id\":\"bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5\",\"pbuzuq_id\":\"bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5\",\"ltxvr_hjpb\":\"/laku\",\"isez_id\":\"bbb863a0-9bd2-e53a-dcac-1bd9dd90ec88\",\"ohklcf_id\":\"bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5:0\",\"ohklcf_hapzfn\":0,\"voeiabl_ohklcf_id\":\"bbb863a0-0962-45f6-9e33-fd4e8deee63d\",\"iijetts_crdu\":\"isez\",\"laku_isez_id\":\"bbb863a0-9bd2-e53a-dcac-1bd9dd90ec88\",\"pbuzuq_xnwowy\":\"pbuzuq_bebis\",\"agnwpzi\":\"ctppjpg\",\"agnwpzi_egmp\":\"xupx-jxku\",\"wqos_blykwq_asafinq\":lxfbx,\"fahl_klot_wqos_blykwq_ymrxbsvp\":rcxm,\"fahl_klot_dgjasxzn\":lxfbx,\"isez_ksulgtg_ae_fggo_ms\":a0023808389aa,\"tvvdipiht_asafinq\":rcxm,\"cbdbp\":\"djl-3.5-bmn\",\"iziffwjbq_ifasil\":\"ovm\"}",
+      "x-openai-internal-codex-responses-lite": "rcxm",
+      "x-client-request-id": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+      "session-id": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+      "thread-id": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+      "accept": "text/event-stream",
+      "content-type": "application/json",
+      "authorization": "Bearer [redacted]",
+      "chatgpt-account-id": "daeea006-bf36-05da-292a-01360ec35875",
+      "originator": "codex-tui",
+      "user-agent": "codex-tui/0.159.3 (Fedora 44.0.0; x86_64) foot (codex-tui; 0.159.3)",
+      "host": "127.0.0.1:8789",
+      "content-length": "42021"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "gpt-6.1-sol",
+        "input": [
+          {
+            "type": "additional_tools",
+            "id": "at_e944cbfe-7f7e-5dc0-8abe-7fdbefe11153",
+            "role": "developer",
+            "tools": [
+              {
+                "type": "namespace",
+                "name": "functions",
+                "description": "[scrubbed 0 chars]",
+                "tools": [
+                  {
+                    "type": "custom",
+                    "name": "exec",
+                    "description": "[scrubbed 3665 chars]",
+                    "format": {
+                      "type": "grammar",
+                      "syntax": "[scrubbed 4 chars]",
+                      "definition": "[scrubbed 177 chars]"
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "wait",
+                    "description": "[scrubbed 769 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "cell_id": {
+                          "type": "string",
+                          "description": "[scrubbed 36 chars]"
+                        },
+                        "max_tokens": {
+                          "type": "number",
+                          "description": "[scrubbed 65 chars]"
+                        },
+                        "terminate": {
+                          "type": "boolean",
+                          "description": "[scrubbed 68 chars]"
+                        },
+                        "yield_time_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 55 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "request_user_input_async",
+                    "description": "[scrubbed 556 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "questions": {
+                          "type": "array",
+                          "description": "[scrubbed 75 chars]",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "options": {
+                                "type": "array",
+                                "description": "[scrubbed 324 chars]",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "minItems": 1
+                              },
+                              "title": {
+                                "type": "string",
+                                "description": "[scrubbed 83 chars]"
+                              }
+                            },
+                            "required": [
+                              "[scrubbed 5 chars]"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "minItems": 1
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 9 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "namespace",
+                "name": "clock",
+                "description": "[scrubbed 38 chars]",
+                "tools": [
+                  {
+                    "type": "function",
+                    "name": "sleep",
+                    "description": "[scrubbed 143 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "duration_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 66 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 11 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "namespace",
+                "name": "collaboration",
+                "description": "[scrubbed 43 chars]",
+                "tools": [
+                  {
+                    "type": "function",
+                    "name": "followup_task",
+                    "description": "[scrubbed 232 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 41 chars]",
+                          "encrypted": true
+                        },
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "interrupt_agent",
+                    "description": "[scrubbed 136 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 64 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "list_agents",
+                    "description": "[scrubbed 88 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path_prefix": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "send_message",
+                    "description": "[scrubbed 105 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 42 chars]",
+                          "encrypted": true
+                        },
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 62 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "spawn_agent",
+                    "description": "[scrubbed 1829 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "fork_turns": {
+                          "type": "string",
+                          "description": "[scrubbed 148 chars]"
+                        },
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 42 chars]",
+                          "encrypted": true
+                        },
+                        "model": {
+                          "type": "string",
+                          "description": "[scrubbed 77 chars]"
+                        },
+                        "reasoning_effort": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        },
+                        "task_name": {
+                          "type": "string",
+                          "description": "[scrubbed 76 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 9 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "wait_agent",
+                    "description": "[scrubbed 383 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "timeout_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 67 chars]"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_c4a469d2-a42f-552b-87eb-515fe56c1edf",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 21769 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5a38-79a0-9838-7c49bc612c39",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 341 chars]"
+              },
+              {
+                "type": "input_text",
+                "text": "[scrubbed 920 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5a38-79a0-9838-7c5da500d081",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 2429 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5a38-79a0-9838-7c6cc753e41d",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 271 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5a38-79a0-9838-7c7ac4ef4d60",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 123 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5a4f-7523-9de4-ae03896381ac",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 418 chars]"
+              }
+            ]
+          }
+        ],
+        "tool_choice": "auto",
+        "parallel_tool_calls": false,
+        "reasoning": {
+          "effort": "low",
+          "context": "[scrubbed 9 chars]"
+        },
+        "store": false,
+        "stream": true,
+        "include": [
+          "reasoning.encrypted_content"
+        ],
+        "prompt_cache_key": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+        "text": {
+          "verbosity": "low",
+          "format": {
+            "type": "json_schema",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 36
+                }
+              },
+              "required": [
+                "[scrubbed 5 chars]"
+              ],
+              "additionalProperties": false
+            },
+            "name": "codex_output_schema"
+          }
+        },
+        "client_metadata": {
+          "x-codex-window-id": "[scrubbed 38 chars]",
+          "x-codex-turn-metadata": "[scrubbed 720 chars]",
+          "x-codex-installation-id": "[scrubbed 36 chars]",
+          "session_id": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+          "thread_id": "01a0f744-5851-73f1-8ec3-05e52868551c",
+          "root_turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe",
+          "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Thu, 01 Oct 2026 11:40:48 GMT",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "x-codex-active-limit": "fbksbwl",
+      "x-codex-plan-type": "xshs",
+      "x-codex-primary-used-percent": "5",
+      "x-codex-secondary-used-percent": "0",
+      "x-codex-primary-window-minutes": "e2b",
+      "x-codex-primary-over-secondary-limit-percent": "0",
+      "x-codex-secondary-window-minutes": "ca3f5",
+      "x-codex-primary-reset-after-seconds": "2c326",
+      "x-codex-secondary-reset-after-seconds": "d3dc07",
+      "x-codex-primary-reset-at": "53e1274406",
+      "x-codex-secondary-reset-at": "1ee409bbbe",
+      "x-codex-credits-has-credits": "Alhla",
+      "x-codex-credits-balance": "0",
+      "x-codex-credits-unlimited": "Alhla",
+      "x-models-etag": "H/\"34e9abd397feb5899ff9547f4b2bd44c\"",
+      "x-codex-turn-state": "pMFCOETjbml_1Ody7Sfc_bym4sFzDYaiZ0F84q8lilx3syjwYtnAx-JS-6L-aAnWEkwVVi2nbYJ8iLliRVQe6cMNdQHbaANwEK2vVi2nByjSil5ir_02JLffhh9oFilkzBuzwiqk3Bsf7H94yzmSJLfFhhp81i-GRfBqOwegFNjkcEJkbP4S8pbL3kF57MjGR5bqoweGFnjkCeJK9PwsM7Bl3KFXr89GrFbQo68-fJqaz3K0RLZpcSt637PHqZvnul-FU9rEhBmTNiH6_KLocAfY_mGWsi7RcjGi3DeXEcGIAV9yXTiIphhjHmgWsI73CJGIfdeXE484A59_zIA_17V2FPf9jL8ioGjO5mzZQpoMWV8Dei20FBvg1PfNJ5qi8GJozmzZqP4mWVMdeIO01bVgfPF99lQIOgJOzMZzQPOmWVm3eiOAfBV2fP3njlqIOgjoz2zZqPoMWvmdEIoafbVGfpfn9lq_W0BULoTok_loVf2cSDeLP1jIdsytKpfORs5dh7u_nDsuj-BlZsOR26NOHYczTZHsQjy5dbq0pKJ3ze3l7s0r265oHYczTzHsqJYt5b2KPkJ3zeb9ZSoRwYNoHyc_K6J1pXHhGPRhOMdPC78jh09VYZkIMSvC2CjLPxhHGpRH6mDpClW3HknVYz8ImSvCK6JlpxH9G-i8FsNpL7LryvBpwgBwa8nuMI6LkXAcdVi8fs-7_u3qLsB2-enjvNnkdkqUlFR2aAfVH5uopzXZOglVSENjvN7kdKqU1frcAaf5Hv4o",
+      "x-codex-safety-buffering-enabled": "rcxm",
+      "x-codex-safety-buffering-faster-model": "djl-3-ofwh",
+      "x-oai-request-id": "1f678234-3271-a986-f3c0-c0148c779a9a",
+      "x-openai-proxy-wasm": "j7.5",
+      "x-content-type-options": "dgqxqnt",
+      "cf-cache-status": "VTLJYQZ",
+      "cross-origin-opener-policy": "xcec-uishsh-ifhnv-qjmsjo",
+      "strict-transport-security": "kck-vbj=1d7beb6d; glaejtmWdiQvyfhvp; ukkcorf",
+      "nel": "{\"nyabnx_dp\":\"cb-nyz\",\"blfusgj_khhngelk\":0.14,\"kck_vbj\":119582}",
+      "report-to": "{\"rivwd\":\"cb-nyz\",\"kck_vbj\":119582,\"kiwcsgdnx\":[{\"ypz\":\"fqmao://0.nyz.eksgkfqfpn.nof/nyabnx/c9?m=TX1%2AW753B%5LxqNItEUqsdbRPoBG0kuUeoWY%1Or4g5sN%9DAyhai2ght%9QHpGewFp9t1046%1KWMrwj3ddP3T8P0QAP30uD3pLEtCBgjjK4MRwjZDd335UPcQA9V0U1fp169\"}]}",
+      "set-cookie": [
+        "[redacted]",
+        "[redacted]",
+        "[redacted]"
+      ],
+      "referrer-policy": "siywdi-uishsh-bidv-qxhoj-uishsh",
+      "cf-ray": "2375d523d25a08af-NXL"
+    },
+    "firstByteMs": 1227.7,
+    "totalMs": 4911.4,
+    "chunkCount": 40,
+    "body": {
+      "kind": "sse",
+      "events": [
+        {
+          "at": 1230.6,
+          "event": "response.created",
+          "data": {
+            "type": "response.created",
+            "response": {
+              "id": "resp_0bdc8401b70724b0016abe46bfd18887d0bdecd6364b2e8248",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "in_progress",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": null,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "auto",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "codex_output_schema",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 36
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 5 chars]"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 3665 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": null,
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 0
+          }
+        },
+        {
+          "at": 1346.6,
+          "event": "response.in_progress",
+          "data": {
+            "type": "response.in_progress",
+            "response": {
+              "id": "resp_0bdc8401b70724b0016abe46bfd18887d0bdecd6364b2e8248",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "in_progress",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": null,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "auto",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "codex_output_schema",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 36
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 5 chars]"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 3665 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": null,
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 1
+          }
+        },
+        {
+          "at": 3722.3,
+          "event": "response.output_item.added",
+          "data": {
+            "type": "response.output_item.added",
+            "item": {
+              "id": "rs_0bdc8401b70724b0016abe46c259e087d0bf3095be99e41638",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "[scrubbed 1292 chars]",
+              "internal_chat_message_metadata_passthrough": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              },
+              "summary": [],
+              "metadata": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              }
+            },
+            "output_index": 0,
+            "sequence_number": 2
+          }
+        },
+        {
+          "at": 4906.3,
+          "event": "response.output_item.done",
+          "data": {
+            "type": "response.output_item.done",
+            "item": {
+              "id": "rs_0bdc8401b70724b0016abe46c259e087d0bf3095be99e41638",
+              "type": "reasoning",
+              "content": [],
+              "encrypted_content": "[scrubbed 1380 chars]",
+              "internal_chat_message_metadata_passthrough": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              },
+              "summary": [],
+              "metadata": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              }
+            },
+            "output_index": 0,
+            "sequence_number": 3
+          }
+        },
+        {
+          "at": 4906.3,
+          "event": "response.output_item.added",
+          "data": {
+            "type": "response.output_item.added",
+            "item": {
+              "id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+              "type": "message",
+              "status": "in_progress",
+              "content": [],
+              "internal_chat_message_metadata_passthrough": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              },
+              "phase": "[scrubbed 12 chars]",
+              "role": "assistant",
+              "metadata": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              }
+            },
+            "output_index": 1,
+            "sequence_number": 4
+          }
+        },
+        {
+          "at": 4906.3,
+          "event": "response.content_part.added",
+          "data": {
+            "type": "response.content_part.added",
+            "content_index": 0,
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "output_index": 1,
+            "part": {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "[scrubbed 0 chars]"
+            },
+            "sequence_number": 5
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 2 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 14 chars]",
+            "output_index": 1,
+            "sequence_number": 6
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 5 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 11 chars]",
+            "output_index": 1,
+            "sequence_number": 7
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 3 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 13 chars]",
+            "output_index": 1,
+            "sequence_number": 8
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 7 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 9 chars]",
+            "output_index": 1,
+            "sequence_number": 9
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 3 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 13 chars]",
+            "output_index": 1,
+            "sequence_number": 10
+          }
+        },
+        {
+          "at": 4906.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 9 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 7 chars]",
+            "output_index": 1,
+            "sequence_number": 11
+          }
+        },
+        {
+          "at": 4906.8,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 2 chars]",
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 14 chars]",
+            "output_index": 1,
+            "sequence_number": 12
+          }
+        },
+        {
+          "at": 4906.8,
+          "event": "response.output_text.done",
+          "data": {
+            "type": "response.output_text.done",
+            "content_index": 0,
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "logprobs": [],
+            "output_index": 1,
+            "sequence_number": 13,
+            "text": "[scrubbed 31 chars]"
+          }
+        },
+        {
+          "at": 4906.8,
+          "event": "response.content_part.done",
+          "data": {
+            "type": "response.content_part.done",
+            "content_index": 0,
+            "item_id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+            "output_index": 1,
+            "part": {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "[scrubbed 31 chars]"
+            },
+            "sequence_number": 14
+          }
+        },
+        {
+          "at": 4906.8,
+          "event": "response.output_item.done",
+          "data": {
+            "type": "response.output_item.done",
+            "item": {
+              "id": "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "[scrubbed 31 chars]"
+                }
+              ],
+              "internal_chat_message_metadata_passthrough": {
+                "create_time": 1790854848.012159,
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              },
+              "phase": "[scrubbed 12 chars]",
+              "role": "assistant",
+              "metadata": {
+                "turn_id": "01a0f744-5879-7740-9bb6-2708c728b9fe"
+              }
+            },
+            "output_index": 1,
+            "sequence_number": 15
+          }
+        },
+        {
+          "at": 4909,
+          "event": "response.completed",
+          "data": {
+            "type": "response.completed",
+            "response": {
+              "id": "resp_0bdc8401b70724b0016abe46bfd18887d0bdecd6364b2e8248",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "completed",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": 1790854851,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-0f5a-0fa4-dd4b-8172399b6fb5",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "json_schema",
+                  "description": null,
+                  "name": "codex_output_schema",
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 36
+                      }
+                    },
+                    "required": [
+                      "[scrubbed 5 chars]"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 3665 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "attribution": {
+                  "items": {
+                    "at_e944cbfe-7f7e-5dc0-8abe-7fdbefe11153": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 2666,
+                      "input_tokens": 2666,
+                      "output_tokens": 0
+                    },
+                    "msg_c4a469d2-a42f-552b-87eb-515fe56c1edf": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 4094,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 4094,
+                          "input_tokens": 4216,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 4216,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5a38-79a0-9838-7c49bc612c39": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 67,
+                          "output_tokens": 0
+                        },
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 179,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 246,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5a38-79a0-9838-7c5da500d081": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 539,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 539,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5a38-79a0-9838-7c6cc753e41d": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 56,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 56,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5a38-79a0-9838-7c7ac4ef4d60": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 38,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 38,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5a4f-7523-9de4-ae03896381ac": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 86,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 86,
+                      "output_tokens": 0
+                    },
+                    "rs_0bdc8401b70724b0016abe46c259e087d0bf3095be99e41638": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 2,
+                      "output_tokens": 16
+                    },
+                    "msg_0bdc8401b70724b0016abe46c37c1087d09dc07525dee5700a": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 0,
+                          "output_tokens": 19
+                        }
+                      ],
+                      "input_tokens": 0,
+                      "output_tokens": 19
+                    }
+                  },
+                  "request_fields": {
+                    "text.format": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 24,
+                      "input_tokens": 24,
+                      "output_tokens": 0
+                    }
+                  }
+                },
+                "input_tokens": 7873,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 6784
+                },
+                "output_tokens": 35,
+                "output_tokens_details": {
+                  "reasoning_tokens": 16
+                },
+                "total_tokens": 7908
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 16
+          }
+        }
+      ]
+    }
+  }
+}

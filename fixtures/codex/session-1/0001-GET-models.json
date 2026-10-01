@@ -1,0 +1,1629 @@
+{
+  "version": 1,
+  "recordedAt": "2026-10-01T11:40:41.613Z",
+  "upstream": "https://chatgpt.com",
+  "request": {
+    "method": "GET",
+    "path": "/models?client_version=0.159.3",
+    "headers": {
+      "authorization": "Bearer [redacted]",
+      "chatgpt-account-id": "daeea006-bf36-05da-292a-01360ec35875",
+      "originator": "codex-tui",
+      "user-agent": "codex-tui/0.159.3 (Fedora 44.0.0; x86_64) foot",
+      "accept": "*/*",
+      "host": "127.0.0.1:8789"
+    },
+    "body": {
+      "kind": "empty"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Thu, 01 Oct 2026 11:40:40 GMT",
+      "content-type": "application/json",
+      "content-length": "610279",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "etag": "H/\"a4c8a635f41acc5fc9fd94220f16f828\"",
+      "cache-control": "private, no-store",
+      "cross-origin-opener-policy": "xcec-uishsh-ifhnv-qjmsjo",
+      "x-oai-request-id": "req_0ce1dd8a2f7d687b880f563ffdfec30f",
+      "x-openai-proxy-wasm": "j7.5",
+      "x-content-type-options": "dgqxqnt",
+      "referrer-policy": "siywdi-uishsh-bidv-qxhoj-uishsh",
+      "cf-cache-status": "VTLJYQZ",
+      "strict-transport-security": "kck-vbj=1d7beb6d; glaejtmWdiQvyfhvp; ukkcorf",
+      "nel": "{\"nyabnx_dp\":\"cb-nyz\",\"blfusgj_khhngelk\":0.14,\"kck_vbj\":119582}",
+      "report-to": "{\"rivwd\":\"cb-nyz\",\"kck_vbj\":119582,\"kiwcsgdnx\":[{\"ypz\":\"fqmao://0.nyz.eksgkfqfpn.nof/nyabnx/c9?m=OjkiwA0%8JZmOvUEfE9NUgHeSRDhS%2BQ9Ffv%1QNx3Be9Iw5xlOUEvaSCyZqQizhbJf%2X6M9EokxjXOIie3bTj9HX%0NKr06%0EDWCCYSKDv3nUfNNSc5dUQ7s3u8zA9ogeDwc\"}]}",
+      "set-cookie": [
+        "[redacted]",
+        "[redacted]",
+        "[redacted]"
+      ],
+      "cf-ray": "ea0e956e79e0fa55-NXL"
+    },
+    "firstByteMs": 728.1,
+    "totalMs": 1662.1,
+    "chunkCount": 105,
+    "body": {
+      "kind": "json",
+      "json": {
+        "models": [
+          {
+            "slug": "[scrubbed 11 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": "[scrubbed 5 chars]",
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": true,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": false,
+            "include_plugin_usage_instructions": false,
+            "guardian": null,
+            "node_repl_auto_review_required": true,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 11 chars]",
+            "description": "[scrubbed 52 chars]",
+            "default_reasoning_level": "[scrubbed 3 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              },
+              {
+                "effort": "ultra",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": {
+              "message": "[scrubbed 99 chars]"
+            },
+            "upgrade": null,
+            "priority": 1,
+            "model_messages": {
+              "instructions_template": "[scrubbed 21769 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": "[scrubbed 5737 chars]",
+              "tools": null,
+              "approvals": {
+                "on_request": null,
+                "on_request_auto_review": "[scrubbed 479 chars]",
+                "never": null,
+                "unless_trusted": null
+              },
+              "collaboration_modes": {
+                "default": "[scrubbed 879 chars]",
+                "plan": null
+              },
+              "auto_review": {
+                "policy_template": null,
+                "policy": null,
+                "node_repl_policy": null,
+                "rejection_instructions": "[scrubbed 388 chars]",
+                "timeout_instructions": null
+              },
+              "multi_agent": {
+                "role": {
+                  "root": "[scrubbed 1101 chars]",
+                  "subagent": "[scrubbed 1154 chars]"
+                },
+                "mode": null
+              },
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": {
+                "classifier_instructions": "[scrubbed 3655 chars]",
+                "review_threshold_basis_points": null,
+                "max_tool_call_lag": null,
+                "reasoning_effort": null,
+                "transcript": null,
+                "max_action_tokens": null,
+                "max_classifier_instruction_tokens": null,
+                "reuse_parent_compaction": null,
+                "max_parent_compaction_tokens": null
+              },
+              "confirmation_policies": {
+                "browser_use": "[scrubbed 11229 chars]",
+                "computer_use": "[scrubbed 11229 chars]"
+              }
+            },
+            "experimental_supported_tools": [
+              "[scrubbed 23 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 25 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 21769 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 11 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": "[scrubbed 5 chars]",
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": true,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": false,
+            "include_plugin_usage_instructions": false,
+            "guardian": null,
+            "node_repl_auto_review_required": true,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 11 chars]",
+            "description": "[scrubbed 50 chars]",
+            "default_reasoning_level": "[scrubbed 3 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              },
+              {
+                "effort": "ultra",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 2,
+            "model_messages": {
+              "instructions_template": "[scrubbed 21769 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": "[scrubbed 5737 chars]",
+              "tools": null,
+              "approvals": {
+                "on_request": null,
+                "on_request_auto_review": "[scrubbed 479 chars]",
+                "never": null,
+                "unless_trusted": null
+              },
+              "collaboration_modes": {
+                "default": "[scrubbed 879 chars]",
+                "plan": null
+              },
+              "auto_review": {
+                "policy_template": null,
+                "policy": null,
+                "node_repl_policy": null,
+                "rejection_instructions": "[scrubbed 388 chars]",
+                "timeout_instructions": null
+              },
+              "multi_agent": {
+                "role": {
+                  "root": "[scrubbed 1101 chars]",
+                  "subagent": "[scrubbed 1154 chars]"
+                },
+                "mode": null
+              },
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": {
+                "classifier_instructions": "[scrubbed 3655 chars]",
+                "review_threshold_basis_points": null,
+                "max_tool_call_lag": null,
+                "reasoning_effort": null,
+                "transcript": null,
+                "max_action_tokens": null,
+                "max_classifier_instruction_tokens": null,
+                "reuse_parent_compaction": null,
+                "max_parent_compaction_tokens": null
+              },
+              "confirmation_policies": {
+                "browser_use": "[scrubbed 11229 chars]",
+                "computer_use": "[scrubbed 11229 chars]"
+              }
+            },
+            "experimental_supported_tools": [
+              "[scrubbed 23 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 25 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 21769 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 9 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": true,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": false,
+            "include_plugin_usage_instructions": false,
+            "guardian": null,
+            "node_repl_auto_review_required": true,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 9 chars]",
+            "description": "[scrubbed 36 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              },
+              {
+                "effort": "ultra",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 3,
+            "model_messages": {
+              "instructions_template": "[scrubbed 18992 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": "[scrubbed 5737 chars]",
+              "tools": null,
+              "approvals": {
+                "on_request": null,
+                "on_request_auto_review": "[scrubbed 479 chars]",
+                "never": null,
+                "unless_trusted": null
+              },
+              "collaboration_modes": {
+                "default": "[scrubbed 879 chars]",
+                "plan": null
+              },
+              "auto_review": {
+                "policy_template": null,
+                "policy": null,
+                "node_repl_policy": null,
+                "rejection_instructions": "[scrubbed 388 chars]",
+                "timeout_instructions": null
+              },
+              "multi_agent": {
+                "role": {
+                  "root": "[scrubbed 1101 chars]",
+                  "subagent": "[scrubbed 1154 chars]"
+                },
+                "mode": null
+              },
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": {
+                "classifier_instructions": "[scrubbed 3655 chars]",
+                "review_threshold_basis_points": null,
+                "max_tool_call_lag": null,
+                "reasoning_effort": null,
+                "transcript": null,
+                "max_action_tokens": null,
+                "max_classifier_instruction_tokens": null,
+                "reuse_parent_compaction": null,
+                "max_parent_compaction_tokens": null
+              },
+              "confirmation_policies": {
+                "browser_use": "[scrubbed 11229 chars]",
+                "computer_use": "[scrubbed 11229 chars]"
+              }
+            },
+            "experimental_supported_tools": [
+              "[scrubbed 23 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 10 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 18992 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 10 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": true,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": false,
+            "include_plugin_usage_instructions": false,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 10 chars]",
+            "description": "[scrubbed 43 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 4,
+            "model_messages": {
+              "instructions_template": "[scrubbed 18037 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": "[scrubbed 5737 chars]",
+              "tools": null,
+              "approvals": {
+                "on_request": null,
+                "on_request_auto_review": "[scrubbed 479 chars]",
+                "never": null,
+                "unless_trusted": null
+              },
+              "collaboration_modes": {
+                "default": "[scrubbed 879 chars]",
+                "plan": null
+              },
+              "auto_review": {
+                "policy_template": null,
+                "policy": null,
+                "node_repl_policy": null,
+                "rejection_instructions": "[scrubbed 388 chars]",
+                "timeout_instructions": null
+              },
+              "multi_agent": {
+                "role": {
+                  "root": "[scrubbed 1101 chars]",
+                  "subagent": "[scrubbed 1154 chars]"
+                },
+                "mode": null
+              },
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": {
+                "classifier_instructions": "[scrubbed 3655 chars]",
+                "review_threshold_basis_points": null,
+                "max_tool_call_lag": null,
+                "reasoning_effort": null,
+                "transcript": null,
+                "max_action_tokens": null,
+                "max_classifier_instruction_tokens": null,
+                "reuse_parent_compaction": null,
+                "max_parent_compaction_tokens": null
+              },
+              "confirmation_policies": {
+                "browser_use": "[scrubbed 11229 chars]",
+                "computer_use": "[scrubbed 11229 chars]"
+              }
+            },
+            "experimental_supported_tools": [
+              "[scrubbed 23 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 10 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 18037 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 11 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": true,
+            "include_plugin_usage_instructions": true,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 11 chars]",
+            "description": "[scrubbed 41 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 4,
+            "model_messages": {
+              "instructions_template": "[scrubbed 17730 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": null,
+              "collaboration_modes": null,
+              "auto_review": null,
+              "multi_agent": null,
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 17730 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 11 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": true,
+            "include_plugin_usage_instructions": true,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 11 chars]",
+            "description": "[scrubbed 33 chars]",
+            "default_reasoning_level": "[scrubbed 3 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              },
+              {
+                "effort": "ultra",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 5,
+            "model_messages": {
+              "instructions_template": "[scrubbed 17730 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": null,
+              "collaboration_modes": null,
+              "auto_review": null,
+              "multi_agent": null,
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 17730 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 13 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": true,
+            "include_plugin_usage_instructions": true,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 13 chars]",
+            "description": "[scrubbed 46 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              },
+              {
+                "effort": "ultra",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 8,
+            "model_messages": {
+              "instructions_template": "[scrubbed 17730 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": null,
+              "collaboration_modes": null,
+              "auto_review": null,
+              "multi_agent": null,
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 17730 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 12 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": true,
+            "include_plugin_usage_instructions": true,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 12 chars]",
+            "description": "[scrubbed 31 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 9,
+            "model_messages": {
+              "instructions_template": "[scrubbed 17730 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": null,
+              "collaboration_modes": null,
+              "auto_review": null,
+              "multi_agent": null,
+              "permissions": null,
+              "token_budget": {
+                "enabled": false,
+                "use_history_notes_extension": false,
+                "reminder_threshold_tokens": 6144,
+                "reminder_message_template": "[scrubbed 926 chars]",
+                "guidance_message": "[scrubbed 1597 chars]",
+                "auto_compact_fallback_prompt": "[scrubbed 785 chars]",
+                "auto_compact_fallback_buffer_tokens": 16384
+              },
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 17730 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 7 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": null,
+            "multi_agent_version": null,
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": false,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": true,
+            "include_apps_usage_instructions": true,
+            "include_plugin_usage_instructions": true,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 272000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 7 chars]",
+            "description": "[scrubbed 20 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 7 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": {
+              "model": "gpt-6.1-sol",
+              "migration_markdown": "[scrubbed 88 chars]",
+              "retirement_at": "[scrubbed 20 chars]"
+            },
+            "priority": 13,
+            "model_messages": {
+              "instructions_template": "[scrubbed 21459 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": null,
+              "collaboration_modes": null,
+              "auto_review": null,
+              "multi_agent": null,
+              "permissions": null,
+              "token_budget": null,
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 14 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 21459 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          },
+          {
+            "slug": "[scrubbed 17 chars]",
+            "prefer_websockets": true,
+            "support_verbosity": true,
+            "default_verbosity": "[scrubbed 3 chars]",
+            "apply_patch_tool_type": "[scrubbed 8 chars]",
+            "web_search_tool_type": "[scrubbed 14 chars]",
+            "input_modalities": [
+              "[scrubbed 4 chars]",
+              "[scrubbed 5 chars]"
+            ],
+            "supports_image_detail_original": true,
+            "truncation_policy": {
+              "mode": "[scrubbed 6 chars]",
+              "limit": 10000
+            },
+            "supports_parallel_tool_calls": true,
+            "tool_mode": "[scrubbed 14 chars]",
+            "multi_agent_version": "[scrubbed 2 chars]",
+            "multi_agent_reasoning_effort": null,
+            "use_responses_lite": true,
+            "supports_reasoning_effort_updates": false,
+            "include_skills_usage_instructions": false,
+            "include_apps_usage_instructions": false,
+            "include_plugin_usage_instructions": false,
+            "guardian": null,
+            "node_repl_auto_review_required": false,
+            "node_repl_disabled": false,
+            "requires_sandboxed_review": false,
+            "auto_review_model_override": null,
+            "model_specialty": null,
+            "context_window": 272000,
+            "max_context_window": 872000,
+            "auto_compact_token_limit": null,
+            "comp_hash": "[scrubbed 4 chars]",
+            "default_reasoning_summary": "[scrubbed 4 chars]",
+            "display_name": "[scrubbed 17 chars]",
+            "description": "[scrubbed 42 chars]",
+            "default_reasoning_level": "[scrubbed 6 chars]",
+            "supported_reasoning_levels": [
+              {
+                "effort": "low",
+                "description": "[scrubbed 37 chars]"
+              },
+              {
+                "effort": "medium",
+                "description": "[scrubbed 53 chars]"
+              },
+              {
+                "effort": "high",
+                "description": "[scrubbed 44 chars]"
+              },
+              {
+                "effort": "xhigh",
+                "description": "[scrubbed 47 chars]"
+              },
+              {
+                "effort": "max",
+                "description": "[scrubbed 48 chars]"
+              }
+            ],
+            "shell_type": "[scrubbed 13 chars]",
+            "visibility": "[scrubbed 4 chars]",
+            "minimal_client_version": "[scrubbed 6 chars]",
+            "supported_in_api": true,
+            "availability_nux": null,
+            "upgrade": null,
+            "priority": 43,
+            "model_messages": {
+              "instructions_template": "[scrubbed 17730 chars]",
+              "instructions_variables": null,
+              "persistent_instructions": null,
+              "tools": null,
+              "approvals": {
+                "on_request": null,
+                "on_request_auto_review": null,
+                "never": "[scrubbed 0 chars]",
+                "unless_trusted": null
+              },
+              "collaboration_modes": null,
+              "auto_review": {
+                "policy_template": "[scrubbed 9734 chars]",
+                "policy": "[scrubbed 8281 chars]",
+                "node_repl_policy": "[scrubbed 3079 chars]",
+                "rejection_instructions": null,
+                "timeout_instructions": null
+              },
+              "multi_agent": null,
+              "permissions": {
+                "danger_full_access": "[scrubbed 0 chars]",
+                "workspace_write": "[scrubbed 0 chars]",
+                "read_only": "[scrubbed 0 chars]"
+              },
+              "token_budget": null,
+              "guardian_v2": null,
+              "confirmation_policies": null
+            },
+            "experimental_supported_tools": [],
+            "available_in_plans": [
+              "[scrubbed 8 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 8 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 9 chars]",
+              "[scrubbed 5 chars]",
+              "[scrubbed 10 chars]",
+              "[scrubbed 25 chars]",
+              "[scrubbed 20 chars]",
+              "[scrubbed 26 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 2 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 4 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 7 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 6 chars]",
+              "[scrubbed 3 chars]",
+              "[scrubbed 27 chars]",
+              "[scrubbed 31 chars]",
+              "[scrubbed 4 chars]"
+            ],
+            "supports_search_tool": true,
+            "supports_experimental_context": false,
+            "default_service_tier": null,
+            "service_tiers": [
+              {
+                "id": "priority",
+                "name": "Fast",
+                "description": "[scrubbed 27 chars]"
+              }
+            ],
+            "additional_speed_tiers": [
+              "[scrubbed 4 chars]"
+            ],
+            "supports_reasoning_summary_parameter": true,
+            "supports_reasoning_summaries": true,
+            "base_instructions": "[scrubbed 17730 chars]",
+            "available_access_programs": {
+              "cyber": [
+                "[scrubbed 8 chars]"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2119 @@
+{
+  "version": 1,
+  "recordedAt": "2026-10-01T11:40:52.601Z",
+  "upstream": "https://chatgpt.com",
+  "request": {
+    "method": "POST",
+    "path": "/responses",
+    "headers": {
+      "x-codex-beta-features": "pgfhpm_hbcpdtbgeg_h1",
+      "x-codex-window-id": "bbb863a0-ea62-73d2-57de-29106134f0ef:0",
+      "x-codex-turn-metadata": "{\"deyhwblcmomf_id\":\"15f0f491-1e21-4e47-e47b-c190860e9c3d\",\"session_id\":\"bbb863a0-ea62-73d2-57de-29106134f0ef\",\"pbuzuq_id\":\"bbb863a0-ea62-73d2-57de-29106134f0ef\",\"ltxvr_hjpb\":\"/laku\",\"isez_id\":\"bbb863a0-f0af-46a9-037e-8036226a37ef\",\"ohklcf_id\":\"bbb863a0-ea62-73d2-57de-29106134f0ef:0\",\"ohklcf_hapzfn\":0,\"voeiabl_ohklcf_id\":\"bbb863a0-4695-f684-a662-4ac9d0783f89\",\"iijetts_crdu\":\"isez\",\"laku_isez_id\":\"bbb863a0-f0af-46a9-037e-8036226a37ef\",\"pbuzuq_xnwowy\":\"user\",\"isez_bqbxkvx\":\"user\",\"agnwpzi\":\"ctppjpg\",\"agnwpzi_egmp\":\"lhlrokhqy-xpeuw\",\"wqos_blykwq_asafinq\":lxfbx,\"fahl_klot_wqos_blykwq_ymrxbsvp\":rcxm,\"fahl_klot_dgjasxzn\":lxfbx,\"xbvnfyjwff\":{\"/vyhz/gdiuoa/imxetna/lubqa-lbr\":{\"ruj_cdwpafh\":lxfbx}},\"isez_ksulgtg_ae_fggo_ms\":0df4efa743cce,\"tvvdipiht_asafinq\":rcxm,\"cbdbp\":\"djl-3.5-bmn\",\"iziffwjbq_ifasil\":\"ovm\"}",
+      "x-openai-internal-codex-responses-lite": "rcxm",
+      "x-client-request-id": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+      "session-id": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+      "thread-id": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+      "accept": "text/event-stream",
+      "content-type": "application/json",
+      "authorization": "Bearer [redacted]",
+      "chatgpt-account-id": "daeea006-bf36-05da-292a-01360ec35875",
+      "originator": "codex-tui",
+      "user-agent": "codex-tui/0.159.3 (Fedora 44.0.0; x86_64) foot (codex-tui; 0.159.3)",
+      "host": "127.0.0.1:8789",
+      "content-length": "64297"
+    },
+    "body": {
+      "kind": "json",
+      "json": {
+        "model": "gpt-6.1-sol",
+        "input": [
+          {
+            "type": "additional_tools",
+            "id": "at_cd57bb0e-91b8-5fd9-909d-6aa9d3438775",
+            "role": "developer",
+            "tools": [
+              {
+                "type": "namespace",
+                "name": "functions",
+                "description": "[scrubbed 0 chars]",
+                "tools": [
+                  {
+                    "type": "custom",
+                    "name": "exec",
+                    "description": "[scrubbed 16497 chars]",
+                    "format": {
+                      "type": "grammar",
+                      "syntax": "[scrubbed 4 chars]",
+                      "definition": "[scrubbed 177 chars]"
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "wait",
+                    "description": "[scrubbed 769 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "cell_id": {
+                          "type": "string",
+                          "description": "[scrubbed 36 chars]"
+                        },
+                        "max_tokens": {
+                          "type": "number",
+                          "description": "[scrubbed 65 chars]"
+                        },
+                        "terminate": {
+                          "type": "boolean",
+                          "description": "[scrubbed 68 chars]"
+                        },
+                        "yield_time_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 55 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "request_user_input",
+                    "description": "[scrubbed 120 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "questions": {
+                          "type": "array",
+                          "description": "[scrubbed 56 chars]",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "header": {
+                                "type": "string",
+                                "description": "[scrubbed 55 chars]"
+                              },
+                              "id": {
+                                "type": "string",
+                                "description": "[scrubbed 51 chars]"
+                              },
+                              "options": {
+                                "type": "array",
+                                "description": "[scrubbed 224 chars]",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "description": {
+                                      "type": "string",
+                                      "description": "[scrubbed 58 chars]"
+                                    },
+                                    "label": {
+                                      "type": "string",
+                                      "description": "[scrubbed 30 chars]"
+                                    }
+                                  },
+                                  "required": [
+                                    "[scrubbed 5 chars]",
+                                    "[scrubbed 11 chars]"
+                                  ],
+                                  "additionalProperties": false
+                                }
+                              },
+                              "question": {
+                                "type": "string",
+                                "description": "[scrubbed 41 chars]"
+                              }
+                            },
+                            "required": [
+                              "[scrubbed 2 chars]",
+                              "[scrubbed 6 chars]",
+                              "[scrubbed 8 chars]",
+                              "[scrubbed 7 chars]"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 9 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "request_user_input_async",
+                    "description": "[scrubbed 556 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "questions": {
+                          "type": "array",
+                          "description": "[scrubbed 75 chars]",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "options": {
+                                "type": "array",
+                                "description": "[scrubbed 324 chars]",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "minItems": 1
+                              },
+                              "title": {
+                                "type": "string",
+                                "description": "[scrubbed 83 chars]"
+                              }
+                            },
+                            "required": [
+                              "[scrubbed 5 chars]"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "minItems": 1
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 9 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "namespace",
+                "name": "clock",
+                "description": "[scrubbed 38 chars]",
+                "tools": [
+                  {
+                    "type": "function",
+                    "name": "sleep",
+                    "description": "[scrubbed 143 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "duration_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 66 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 11 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "namespace",
+                "name": "collaboration",
+                "description": "[scrubbed 43 chars]",
+                "tools": [
+                  {
+                    "type": "function",
+                    "name": "followup_task",
+                    "description": "[scrubbed 232 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 41 chars]",
+                          "encrypted": true
+                        },
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "interrupt_agent",
+                    "description": "[scrubbed 136 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 64 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "list_agents",
+                    "description": "[scrubbed 88 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "path_prefix": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "send_message",
+                    "description": "[scrubbed 105 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 42 chars]",
+                          "encrypted": true
+                        },
+                        "target": {
+                          "type": "string",
+                          "description": "[scrubbed 62 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 6 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "spawn_agent",
+                    "description": "[scrubbed 1829 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "fork_turns": {
+                          "type": "string",
+                          "description": "[scrubbed 148 chars]"
+                        },
+                        "message": {
+                          "type": "string",
+                          "description": "[scrubbed 42 chars]",
+                          "encrypted": true
+                        },
+                        "model": {
+                          "type": "string",
+                          "description": "[scrubbed 77 chars]"
+                        },
+                        "reasoning_effort": {
+                          "type": "string",
+                          "description": "[scrubbed 79 chars]"
+                        },
+                        "task_name": {
+                          "type": "string",
+                          "description": "[scrubbed 76 chars]"
+                        }
+                      },
+                      "required": [
+                        "[scrubbed 9 chars]",
+                        "[scrubbed 7 chars]"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "name": "wait_agent",
+                    "description": "[scrubbed 383 chars]",
+                    "strict": false,
+                    "parameters": {
+                      "type": "object",
+                      "properties": {
+                        "timeout_ms": {
+                          "type": "number",
+                          "description": "[scrubbed 67 chars]"
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_36a82953-d8b2-53ba-9554-a99ad5340952",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 21769 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-57f9-7250-a048-c01eb5acc225",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 3581 chars]"
+              },
+              {
+                "type": "input_text",
+                "text": "[scrubbed 4052 chars]"
+              },
+              {
+                "type": "input_text",
+                "text": "[scrubbed 920 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-57f9-7250-a048-c020bb873ca6",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 2429 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-57f9-7250-a048-c03f2df4d732",
+            "role": "developer",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 271 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-57f9-7250-a048-c04c5cf75410",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 950 chars]"
+              }
+            ]
+          },
+          {
+            "type": "message",
+            "id": "msg_01a0f744-5827-7c22-a505-86b08c230a38",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "[scrubbed 5 chars]"
+              }
+            ]
+          }
+        ],
+        "tool_choice": "auto",
+        "parallel_tool_calls": false,
+        "reasoning": {
+          "effort": "low",
+          "context": "[scrubbed 9 chars]"
+        },
+        "store": false,
+        "stream": true,
+        "include": [
+          "reasoning.encrypted_content"
+        ],
+        "prompt_cache_key": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+        "text": {
+          "verbosity": "low"
+        },
+        "client_metadata": {
+          "x-codex-window-id": "[scrubbed 38 chars]",
+          "session_id": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+          "turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad",
+          "root_turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad",
+          "x-codex-installation-id": "[scrubbed 36 chars]",
+          "x-codex-turn-metadata": "[scrubbed 810 chars]",
+          "thread_id": "01a0f744-4669-77b3-a09d-93e460307a48"
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Thu, 01 Oct 2026 11:40:47 GMT",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "x-codex-active-limit": "fbksbwl",
+      "x-codex-plan-type": "xshs",
+      "x-codex-primary-used-percent": "5",
+      "x-codex-secondary-used-percent": "0",
+      "x-codex-primary-window-minutes": "e2b",
+      "x-codex-primary-over-secondary-limit-percent": "0",
+      "x-codex-secondary-window-minutes": "ca3f5",
+      "x-codex-primary-reset-after-seconds": "2832e",
+      "x-codex-secondary-reset-after-seconds": "fa84b2",
+      "x-codex-primary-reset-at": "53e1274406",
+      "x-codex-secondary-reset-at": "1ee409bbbe",
+      "x-codex-credits-has-credits": "Alhla",
+      "x-codex-credits-balance": "0",
+      "x-codex-credits-unlimited": "Alhla",
+      "x-models-etag": "H/\"34e9abd397feb5899ff9547f4b2bd44c\"",
+      "x-codex-turn-state": "pMFCOETjbml_8ijbvJ0a5g_IHnyT5cneRNcA2seSUf-wYNI8rZe_df4rSVUsQUDjjjMBM_4Wt7CHtMm2TwLs1tPB1rii0VCUftTSk0AwT-SKfQDMdmXihV3OfabeeT_GKejFEFr2Th25duVEpRN0gAFwovJmDkAgke9FEFrkthe5Du9EPRNKGAfWOVjMDKa4kE97EFR_0IAN-HGBW8WBYqKhiZhoSt_89rvxtbJFnFP27ERJ6_tqH08D9xAKaCG6b2lOtRrHHzMSd2MKA0tqHKgdb1akA6gA1ulOtRR17z8SD2M6AETqHkg1bx0k2CGA1UlOtR7hHzmsDcMKaeTQHk81bx0KAcG6b2LO-N_5VyW4Njqp_PsF9JhaEequu98Evk4Knm7oh1MFlMWxVpS_d29lyGUsyEbMN8o7IEYclSszm-bJp2zr-dDT2IUPxIJFCsJQb67DxI3Ji94wvB93SdDTSI6PxIJfC4jQ9qTDXiN_pUNOaU4xO9wgwt5JvpR2ntHHrd0qhxnBpu1680KXO9WGW-sxkN4xThJ2EBWjxCLb4THKzCeBX_Y0XKyCXLnsUDJK_6f5e3H1BgcXBzteLs3CHqjH7Y1BBea2YyFNerhbBGCx9zTe9SRC7qJHfYtBbeAq2Y1NerhB32cXbZteLs-sQtLoOwu0gr-pMJ94HZLrRgvRn1Ez_sVzRmTFMM6bXrgwD86Mdhbpkc_YKPqd3tXRW_u5bjiJwEbiFL24EcCj8-vA2zieuWl59yZ7mKNGpCfl4A29AmxL",
+      "x-codex-safety-buffering-enabled": "rcxm",
+      "x-codex-safety-buffering-faster-model": "djl-3-ofwh",
+      "x-oai-request-id": "ce5d9d26-9168-d1f8-bbd3-63a7eed04171",
+      "x-openai-proxy-wasm": "j7.5",
+      "x-content-type-options": "dgqxqnt",
+      "cross-origin-opener-policy": "xcec-uishsh-ifhnv-qjmsjo",
+      "referrer-policy": "siywdi-uishsh-bidv-qxhoj-uishsh",
+      "cf-cache-status": "VTLJYQZ",
+      "strict-transport-security": "kck-vbj=1d7beb6d; glaejtmWdiQvyfhvp; ukkcorf",
+      "nel": "{\"nyabnx_dp\":\"cb-nyz\",\"blfusgj_khhngelk\":0.14,\"kck_vbj\":119582}",
+      "report-to": "{\"rivwd\":\"cb-nyz\",\"kck_vbj\":119582,\"kiwcsgdnx\":[{\"ypz\":\"fqmao://0.nyz.eksgkfqfpn.nof/nyabnx/c9?m=gv8rTFI8253b6kA3cXNwqVCbjMHeYcbQ6vARtFiEebVbU0axcXN%2Mb12bz09GmXCpcZiiv8X6vuXyKZ7Xby%0LSvjjzUt7T3EeGjzFHs4GkpZ11TC0%2WrG1r9hglZNqu\"}]}",
+      "set-cookie": [
+        "[redacted]",
+        "[redacted]",
+        "[redacted]"
+      ],
+      "cf-ray": "c287a591fb559c61-NXL"
+    },
+    "firstByteMs": 1481.4,
+    "totalMs": 6048.9,
+    "chunkCount": 23,
+    "body": {
+      "kind": "sse",
+      "events": [
+        {
+          "at": 1482.9,
+          "event": "response.created",
+          "data": {
+            "type": "response.created",
+            "response": {
+              "id": "resp_0b3c6f52405fa6ee016abe46bf680c87d09e48c80394ab12e8",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "in_progress",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": null,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "auto",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "text"
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 120 chars]",
+                      "name": "request_user_input",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 56 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "description": "[scrubbed 55 chars]"
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "description": "[scrubbed 51 chars]"
+                                },
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 224 chars]",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "description": "[scrubbed 58 chars]"
+                                      },
+                                      "label": {
+                                        "type": "string",
+                                        "description": "[scrubbed 30 chars]"
+                                      }
+                                    },
+                                    "required": [
+                                      "[scrubbed 5 chars]",
+                                      "[scrubbed 11 chars]"
+                                    ],
+                                    "additionalProperties": false
+                                  }
+                                },
+                                "question": {
+                                  "type": "string",
+                                  "description": "[scrubbed 41 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 2 chars]",
+                                "[scrubbed 6 chars]",
+                                "[scrubbed 8 chars]",
+                                "[scrubbed 7 chars]"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 16497 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": null,
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 0
+          }
+        },
+        {
+          "at": 1755.1,
+          "event": "response.in_progress",
+          "data": {
+            "type": "response.in_progress",
+            "response": {
+              "id": "resp_0b3c6f52405fa6ee016abe46bf680c87d09e48c80394ab12e8",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "in_progress",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": null,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "auto",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "text"
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 120 chars]",
+                      "name": "request_user_input",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 56 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "description": "[scrubbed 55 chars]"
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "description": "[scrubbed 51 chars]"
+                                },
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 224 chars]",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "description": "[scrubbed 58 chars]"
+                                      },
+                                      "label": {
+                                        "type": "string",
+                                        "description": "[scrubbed 30 chars]"
+                                      }
+                                    },
+                                    "required": [
+                                      "[scrubbed 5 chars]",
+                                      "[scrubbed 11 chars]"
+                                    ],
+                                    "additionalProperties": false
+                                  }
+                                },
+                                "question": {
+                                  "type": "string",
+                                  "description": "[scrubbed 41 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 2 chars]",
+                                "[scrubbed 6 chars]",
+                                "[scrubbed 8 chars]",
+                                "[scrubbed 7 chars]"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 16497 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": null,
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 1
+          }
+        },
+        {
+          "at": 2889.5,
+          "event": "response.output_item.added",
+          "data": {
+            "type": "response.output_item.added",
+            "item": {
+              "id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+              "type": "message",
+              "status": "in_progress",
+              "content": [],
+              "internal_chat_message_metadata_passthrough": {
+                "turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad"
+              },
+              "phase": "[scrubbed 12 chars]",
+              "role": "assistant",
+              "metadata": {
+                "turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad"
+              }
+            },
+            "output_index": 0,
+            "sequence_number": 2
+          }
+        },
+        {
+          "at": 2940.6,
+          "event": "response.content_part.added",
+          "data": {
+            "type": "response.content_part.added",
+            "content_index": 0,
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "output_index": 0,
+            "part": {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "[scrubbed 0 chars]"
+            },
+            "sequence_number": 3
+          }
+        },
+        {
+          "at": 3079.9,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 5 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 11 chars]",
+            "output_index": 0,
+            "sequence_number": 4
+          }
+        },
+        {
+          "at": 3798,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 1 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 15 chars]",
+            "output_index": 0,
+            "sequence_number": 5
+          }
+        },
+        {
+          "at": 3798.8,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 5 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 11 chars]",
+            "output_index": 0,
+            "sequence_number": 6
+          }
+        },
+        {
+          "at": 3799,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 6 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 10 chars]",
+            "output_index": 0,
+            "sequence_number": 7
+          }
+        },
+        {
+          "at": 3799.2,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 4 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 12 chars]",
+            "output_index": 0,
+            "sequence_number": 8
+          }
+        },
+        {
+          "at": 4102.4,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 5 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 11 chars]",
+            "output_index": 0,
+            "sequence_number": 9
+          }
+        },
+        {
+          "at": 4156.3,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 3 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 13 chars]",
+            "output_index": 0,
+            "sequence_number": 10
+          }
+        },
+        {
+          "at": 5391.6,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 5 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 11 chars]",
+            "output_index": 0,
+            "sequence_number": 11
+          }
+        },
+        {
+          "at": 5496.8,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 3 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 13 chars]",
+            "output_index": 0,
+            "sequence_number": 12
+          }
+        },
+        {
+          "at": 5692.3,
+          "event": "response.output_text.delta",
+          "data": {
+            "type": "response.output_text.delta",
+            "content_index": 0,
+            "delta": "[scrubbed 1 chars]",
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "obfuscation": "[scrubbed 15 chars]",
+            "output_index": 0,
+            "sequence_number": 13
+          }
+        },
+        {
+          "at": 5773.5,
+          "event": "response.output_text.done",
+          "data": {
+            "type": "response.output_text.done",
+            "content_index": 0,
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "logprobs": [],
+            "output_index": 0,
+            "sequence_number": 14,
+            "text": "[scrubbed 38 chars]"
+          }
+        },
+        {
+          "at": 5774.1,
+          "event": "response.content_part.done",
+          "data": {
+            "type": "response.content_part.done",
+            "content_index": 0,
+            "item_id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+            "output_index": 0,
+            "part": {
+              "type": "output_text",
+              "annotations": [],
+              "logprobs": [],
+              "text": "[scrubbed 38 chars]"
+            },
+            "sequence_number": 15
+          }
+        },
+        {
+          "at": 5794,
+          "event": "response.output_item.done",
+          "data": {
+            "type": "response.output_item.done",
+            "item": {
+              "id": "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3",
+              "type": "message",
+              "status": "completed",
+              "content": [
+                {
+                  "type": "output_text",
+                  "annotations": [],
+                  "logprobs": [],
+                  "text": "[scrubbed 38 chars]"
+                }
+              ],
+              "internal_chat_message_metadata_passthrough": {
+                "create_time": 1790854847.604064,
+                "turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad"
+              },
+              "phase": "[scrubbed 12 chars]",
+              "role": "assistant",
+              "metadata": {
+                "turn_id": "01a0f744-5625-7671-8019-46860ca2f1ad"
+              }
+            },
+            "output_index": 0,
+            "sequence_number": 16
+          }
+        },
+        {
+          "at": 6046.5,
+          "event": "response.completed",
+          "data": {
+            "type": "response.completed",
+            "response": {
+              "id": "resp_0b3c6f52405fa6ee016abe46bf680c87d09e48c80394ab12e8",
+              "object": "response",
+              "created_at": 1790854847,
+              "status": "completed",
+              "access_programs": {
+                "cyber": "[scrubbed 8 chars]"
+              },
+              "background": false,
+              "completed_at": 1790854851,
+              "error": null,
+              "frequency_penalty": 0,
+              "incomplete_details": null,
+              "instructions": null,
+              "max_output_tokens": null,
+              "max_tool_calls": null,
+              "model": "gpt-6.1-sol",
+              "moderation": null,
+              "output": [],
+              "parallel_tool_calls": false,
+              "presence_penalty": 0,
+              "previous_response_id": null,
+              "prompt_cache_key": "bbb863a0-ea62-73d2-57de-29106134f0ef",
+              "prompt_cache_retention": "[scrubbed 3 chars]",
+              "reasoning": {
+                "context": "[scrubbed 9 chars]",
+                "effort": "low",
+                "mode": "[scrubbed 8 chars]",
+                "summary": null
+              },
+              "safety_identifier": "user-fNPEuYwnJmlBS968MU9uGzey",
+              "service_tier": "default",
+              "store": false,
+              "temperature": 1,
+              "text": {
+                "format": {
+                  "type": "text"
+                },
+                "verbosity": "low"
+              },
+              "tool_choice": "auto",
+              "tool_usage": {
+                "image_gen": {
+                  "input_tokens": 0,
+                  "input_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "output_tokens": 0,
+                  "output_tokens_details": {
+                    "image_tokens": 0,
+                    "text_tokens": 0
+                  },
+                  "total_tokens": 0
+                },
+                "web_search": {
+                  "num_requests": 0
+                }
+              },
+              "tools": [
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 0 chars]",
+                  "name": "functions",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 769 chars]",
+                      "name": "wait",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "cell_id": {
+                            "type": "string",
+                            "description": "[scrubbed 36 chars]"
+                          },
+                          "max_tokens": {
+                            "type": "number",
+                            "description": "[scrubbed 65 chars]"
+                          },
+                          "terminate": {
+                            "type": "boolean",
+                            "description": "[scrubbed 68 chars]"
+                          },
+                          "yield_time_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 55 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 120 chars]",
+                      "name": "request_user_input",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 56 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "description": "[scrubbed 55 chars]"
+                                },
+                                "id": {
+                                  "type": "string",
+                                  "description": "[scrubbed 51 chars]"
+                                },
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 224 chars]",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string",
+                                        "description": "[scrubbed 58 chars]"
+                                      },
+                                      "label": {
+                                        "type": "string",
+                                        "description": "[scrubbed 30 chars]"
+                                      }
+                                    },
+                                    "required": [
+                                      "[scrubbed 5 chars]",
+                                      "[scrubbed 11 chars]"
+                                    ],
+                                    "additionalProperties": false
+                                  }
+                                },
+                                "question": {
+                                  "type": "string",
+                                  "description": "[scrubbed 41 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 2 chars]",
+                                "[scrubbed 6 chars]",
+                                "[scrubbed 8 chars]",
+                                "[scrubbed 7 chars]"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 556 chars]",
+                      "name": "request_user_input_async",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "questions": {
+                            "type": "array",
+                            "description": "[scrubbed 75 chars]",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "array",
+                                  "description": "[scrubbed 324 chars]",
+                                  "items": {
+                                    "type": "string"
+                                  },
+                                  "minItems": 1
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "description": "[scrubbed 83 chars]"
+                                }
+                              },
+                              "required": [
+                                "[scrubbed 5 chars]"
+                              ],
+                              "additionalProperties": false
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "custom",
+                      "description": "[scrubbed 16497 chars]",
+                      "format": {
+                        "type": "grammar",
+                        "definition": "[scrubbed 177 chars]",
+                        "syntax": "[scrubbed 4 chars]"
+                      },
+                      "name": "exec"
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 38 chars]",
+                  "name": "clock",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 143 chars]",
+                      "name": "sleep",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "duration_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 66 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 11 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                },
+                {
+                  "type": "namespace",
+                  "description": "[scrubbed 43 chars]",
+                  "name": "collaboration",
+                  "tools": [
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 232 chars]",
+                      "name": "followup_task",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 41 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 136 chars]",
+                      "name": "interrupt_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 64 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 88 chars]",
+                      "name": "list_agents",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "path_prefix": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 105 chars]",
+                      "name": "send_message",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "target": {
+                            "type": "string",
+                            "description": "[scrubbed 62 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 6 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 1829 chars]",
+                      "name": "spawn_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "fork_turns": {
+                            "type": "string",
+                            "description": "[scrubbed 148 chars]"
+                          },
+                          "message": {
+                            "type": "string",
+                            "description": "[scrubbed 42 chars]",
+                            "encrypted": true
+                          },
+                          "model": {
+                            "type": "string",
+                            "description": "[scrubbed 77 chars]"
+                          },
+                          "reasoning_effort": {
+                            "type": "string",
+                            "description": "[scrubbed 79 chars]"
+                          },
+                          "task_name": {
+                            "type": "string",
+                            "description": "[scrubbed 76 chars]"
+                          }
+                        },
+                        "required": [
+                          "[scrubbed 9 chars]",
+                          "[scrubbed 7 chars]"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    },
+                    {
+                      "type": "function",
+                      "description": "[scrubbed 383 chars]",
+                      "name": "wait_agent",
+                      "output_schema": null,
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "timeout_ms": {
+                            "type": "number",
+                            "description": "[scrubbed 67 chars]"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      "strict": false
+                    }
+                  ]
+                }
+              ],
+              "top_logprobs": 0,
+              "top_p": 0.98,
+              "truncation": "disabled",
+              "usage": {
+                "attribution": {
+                  "items": {
+                    "at_cd57bb0e-91b8-5fd9-909d-6aa9d3438775": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 4480,
+                      "input_tokens": 5622,
+                      "output_tokens": 0
+                    },
+                    "msg_36a82953-d8b2-53ba-9554-a99ad5340952": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 4216,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 4216,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-57f9-7250-a048-c01eb5acc225": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 851,
+                          "output_tokens": 0
+                        },
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 838,
+                          "output_tokens": 0
+                        },
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 179,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 1868,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-57f9-7250-a048-c020bb873ca6": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 539,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 539,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-57f9-7250-a048-c03f2df4d732": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 56,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 56,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-57f9-7250-a048-c04c5cf75410": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 270,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 270,
+                      "output_tokens": 0
+                    },
+                    "msg_01a0f744-5827-7c22-a505-86b08c230a38": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 5,
+                          "output_tokens": 0
+                        }
+                      ],
+                      "input_tokens": 5,
+                      "output_tokens": 0
+                    },
+                    "msg_0b3c6f52405fa6ee016abe46c1448487d098b2a7dc70cf5de3": {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "content": [
+                        {
+                          "cache_write_tokens": 0,
+                          "cached_tokens": 0,
+                          "input_tokens": 2,
+                          "output_tokens": 14
+                        }
+                      ],
+                      "input_tokens": 2,
+                      "output_tokens": 14
+                    }
+                  }
+                },
+                "input_tokens": 12578,
+                "input_tokens_details": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 4480
+                },
+                "output_tokens": 14,
+                "output_tokens_details": {
+                  "reasoning_tokens": 0
+                },
+                "total_tokens": 12592
+              },
+              "user": null,
+              "metadata": {}
+            },
+            "sequence_number": 17
+          }
+        }
+      ]
+    }
+  }
+}

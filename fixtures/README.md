@@ -23,6 +23,15 @@ exchanges: the connectivity check (`HEAD`), a rate-limit `429`, a short reply, a
 reply that ends in a tool call, and a long stream of about 545 events. Their token counts in
 `expected.json` were read straight from the recorded usage fields.
 
+## codex/session-1/
+
+Recorded from a real Codex CLI session signed in with ChatGPT, through a custom model
+provider pointed at the recorder, and scrubbed. Four exchanges: the model list (`GET /models`),
+a short reply, a reply with reasoning, and a reply that ends in a tool call. Codex posts to
+`/responses` with no `/v1` prefix and its streams carry no `content-type`, so both are covered
+here. Token counts in `expected.json` come from the recorded `response.completed` usage, with
+cached tokens split out of the input total.
+
 Recorded fixtures go in `fixtures/<agent>/<scenario>/`, produced with
 `pnpm record` followed by `pnpm scrub`. Review each one before committing: check for names,
 paths and anything else personal, and keep only a few representative exchanges.
