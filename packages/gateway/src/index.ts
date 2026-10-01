@@ -6,7 +6,7 @@ export { createUsageRecorder, isInferencePath } from "./recorder.js";
 export { openSqliteStore } from "./sqlite.js";
 export type { ModelStats, Stats } from "./stats.js";
 export { formatStats, parseSince, summarize, toCsv, toJsonl } from "./stats.js";
-export type { TimeRange, UsageRecord, UsageStore } from "./store.js";
+export type { RoutingRecord, TimeRange, UsageRecord, UsageStore } from "./store.js";
 export { createMemoryStore } from "./store.js";
 export type { Provider, Upstreams } from "./upstream.js";
 export { DEFAULT_UPSTREAMS, detectProvider } from "./upstream.js";

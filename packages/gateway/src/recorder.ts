@@ -1,6 +1,6 @@
 import type { PricingTable } from "./pricing.js";
 import type { Exchange } from "./proxy.js";
-import type { UsageStore } from "./store.js";
+import type { RoutingRecord, UsageStore } from "./store.js";
 
 /** Only requests that run a model are recorded; listing models or counting tokens is not usage. */
 export function isInferencePath(path: string): boolean {
@@ -12,6 +12,25 @@ export function isInferencePath(path: string): boolean {
     // Codex signed in with ChatGPT posts to the bare path, with no /v1.
     pathname === "/responses"
   );
+}
+
+function routingRecord(e: Exchange, pricing: PricingTable): RoutingRecord | null {
+  const r = e.routing;
+  if (!r) return null;
+  // The other option is the requested model if we rewrote, and the routed model if we only watched.
+  const other = r.action === "route" ? e.requestModel : r.model;
+  const altCostUsd = e.usage && other ? (pricing.cost(other, e.usage) ?? null) : null;
+  return {
+    action: r.action,
+    reason: r.reason,
+    tier: r.target?.tier ?? null,
+    effort: r.target?.effort ?? null,
+    model: r.model ?? null,
+    decided: r.decided,
+    deciderMs: r.deciderLatencyMs ?? null,
+    deciderCostUsd: r.deciderCostUsd ?? null,
+    altCostUsd,
+  };
 }
 
 /**
@@ -42,6 +61,7 @@ export function createUsageRecorder(
       firstByteMs: e.firstByteMs,
       totalMs: e.totalMs,
       error: e.error ?? null,
+      routing: routingRecord(e, pricing),
     });
   };
 }

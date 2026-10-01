@@ -1,3 +1,23 @@
+/** What the router did, or would have done in shadow mode, for one request. */
+export interface RoutingRecord {
+  /** `route` rewrote the request, `shadow` only logged, `passthrough` left it alone. */
+  readonly action: "passthrough" | "shadow" | "route";
+  readonly reason: string;
+  /** The tier, effort and model the router picked. Null when it picked nothing. */
+  readonly tier: string | null;
+  readonly effort: string | null;
+  readonly model: string | null;
+  /** True when the decider was consulted for this request. */
+  readonly decided: boolean;
+  readonly deciderMs: number | null;
+  readonly deciderCostUsd: number | null;
+  /**
+   * What the same tokens would have cost on the other option: the requested model when the
+   * request was rewritten, the routed model in shadow mode. Null when a price is unknown.
+   */
+  readonly altCostUsd: number | null;
+}
+
 /** One row per inference request that passed through the gateway. */
 export interface UsageRecord {
   /** Milliseconds since the epoch, when the request arrived. */
@@ -20,6 +40,8 @@ export interface UsageRecord {
   readonly firstByteMs: number | null;
   readonly totalMs: number;
   readonly error: string | null;
+  /** Null when routing was not involved (it is off, or the request was not routable). */
+  readonly routing: RoutingRecord | null;
 }
 
 export interface TimeRange {

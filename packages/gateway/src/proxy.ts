@@ -7,6 +7,7 @@ import {
 } from "node:http";
 import { request as httpsRequest } from "node:https";
 import type { AddressInfo } from "node:net";
+import type { RoutingDecision } from "./routing/router.js";
 import { DEFAULT_UPSTREAMS, detectProvider, type Provider, type Upstreams } from "./upstream.js";
 import { readRequestInfo, type TapResult, type Usage, UsageTap } from "./usage.js";
 
@@ -33,6 +34,8 @@ export interface Exchange {
   readonly stream?: boolean;
   /** Token counts read from the response, when it carried any. */
   readonly usage?: Usage;
+  /** What the router did with this request, when routing is enabled. */
+  readonly routing?: RoutingDecision;
 }
 
 export interface GatewayOptions {

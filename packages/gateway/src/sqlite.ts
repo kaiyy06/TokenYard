@@ -3,7 +3,7 @@ import { dirname } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 import type { TimeRange, UsageRecord, UsageStore } from "./store.js";
 
-const SCHEMA_VERSION = 1;
+const SCHEMA_VERSION = 2;
 
 const MIGRATIONS: readonly string[] = [
   `CREATE TABLE usage (
@@ -26,6 +26,15 @@ const MIGRATIONS: readonly string[] = [
      error TEXT
    );
    CREATE INDEX usage_ts ON usage (ts);`,
+  `ALTER TABLE usage ADD COLUMN route_action TEXT;
+   ALTER TABLE usage ADD COLUMN route_reason TEXT;
+   ALTER TABLE usage ADD COLUMN routed_tier TEXT;
+   ALTER TABLE usage ADD COLUMN routed_effort TEXT;
+   ALTER TABLE usage ADD COLUMN routed_model TEXT;
+   ALTER TABLE usage ADD COLUMN decided INTEGER;
+   ALTER TABLE usage ADD COLUMN decider_ms REAL;
+   ALTER TABLE usage ADD COLUMN decider_cost_usd REAL;
+   ALTER TABLE usage ADD COLUMN alt_cost_usd REAL;`,
 ];
 
 interface Row {
@@ -45,6 +54,15 @@ interface Row {
   first_byte_ms: number | null;
   total_ms: number;
   error: string | null;
+  route_action: "passthrough" | "shadow" | "route" | null;
+  route_reason: string | null;
+  routed_tier: string | null;
+  routed_effort: string | null;
+  routed_model: string | null;
+  decided: number | null;
+  decider_ms: number | null;
+  decider_cost_usd: number | null;
+  alt_cost_usd: number | null;
 }
 
 /** Opens (creating and migrating if needed) the SQLite usage database at `file`. */
@@ -67,8 +85,9 @@ export function openSqliteStore(file: string): UsageStore {
   const insert = db.prepare(
     `INSERT INTO usage (ts, provider, method, path, status, model, request_model, stream,
        input_tokens, output_tokens, cache_read_tokens, cache_write_tokens, cost_usd,
-       first_byte_ms, total_ms, error)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+       first_byte_ms, total_ms, error, route_action, route_reason, routed_tier, routed_effort,
+       routed_model, decided, decider_ms, decider_cost_usd, alt_cost_usd)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
   );
   const list = db.prepare("SELECT * FROM usage WHERE ts >= ? AND ts < ? ORDER BY ts, id");
 
@@ -91,6 +110,15 @@ export function openSqliteStore(file: string): UsageStore {
         r.firstByteMs,
         r.totalMs,
         r.error,
+        r.routing?.action ?? null,
+        r.routing?.reason ?? null,
+        r.routing?.tier ?? null,
+        r.routing?.effort ?? null,
+        r.routing?.model ?? null,
+        r.routing ? (r.routing.decided ? 1 : 0) : null,
+        r.routing?.deciderMs ?? null,
+        r.routing?.deciderCostUsd ?? null,
+        r.routing?.altCostUsd ?? null,
       );
     },
     list(range: TimeRange = {}) {
@@ -116,6 +144,20 @@ export function openSqliteStore(file: string): UsageStore {
           firstByteMs: row.first_byte_ms,
           totalMs: row.total_ms,
           error: row.error,
+          routing:
+            row.route_action === null
+              ? null
+              : {
+                  action: row.route_action,
+                  reason: row.route_reason ?? "",
+                  tier: row.routed_tier,
+                  effort: row.routed_effort,
+                  model: row.routed_model,
+                  decided: row.decided === 1,
+                  deciderMs: row.decider_ms,
+                  deciderCostUsd: row.decider_cost_usd,
+                  altCostUsd: row.alt_cost_usd,
+                },
         }),
       );
     },

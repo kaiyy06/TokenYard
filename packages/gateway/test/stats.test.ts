@@ -21,6 +21,7 @@ function record(overrides: Partial<UsageRecord> = {}): UsageRecord {
     firstByteMs: 100,
     totalMs: 400,
     error: null,
+    routing: null,
     ...overrides,
   };
 }
