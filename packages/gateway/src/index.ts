@@ -12,7 +12,7 @@ export { createRouter } from "./routing/router.js";
 export type { SessionStore } from "./routing/session.js";
 export { createSessionStore } from "./routing/session.js";
 export { openSqliteStore } from "./sqlite.js";
-export type { ModelStats, Stats } from "./stats.js";
+export type { ModelStats, RoutingStats, Stats } from "./stats.js";
 export { formatStats, parseSince, summarize, toCsv, toJsonl } from "./stats.js";
 export type { RoutingRecord, TimeRange, UsageRecord, UsageStore } from "./store.js";
 export { createMemoryStore } from "./store.js";

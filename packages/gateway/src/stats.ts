@@ -21,6 +21,30 @@ export interface Stats {
   /** Share of input tokens served from the prompt cache, or null with no input. */
   readonly cacheHitRate: number | null;
   readonly firstByteMs: { readonly p50: number; readonly p95: number } | null;
+  /** Null when no request involved routing. */
+  readonly routing: RoutingStats | null;
+}
+
+export interface RoutingStats {
+  readonly requests: number;
+  readonly shadow: number;
+  readonly routed: number;
+  readonly passedThrough: number;
+  /** Requests the router chose a different model for (applied or only logged). */
+  readonly switches: number;
+  /** Requests where the decider was consulted, and how long it took on average. */
+  readonly decisions: number;
+  readonly avgDeciderMs: number | null;
+  readonly deciderCostUsd: number;
+  /**
+   * Spend minus the other option's cost for the same tokens, over switched requests that could
+   * be priced. In shadow mode this is what routing would have saved; it ignores the cost of
+   * rebuilding the prompt cache, so treat it as an estimate.
+   */
+  readonly savedUsd: number;
+  readonly priced: number;
+  /** Why requests were passed through, most common first. */
+  readonly passthroughReasons: readonly { readonly reason: string; readonly count: number }[];
 }
 
 type Mutable<T> = { -readonly [K in keyof T]: T[K] };
@@ -53,6 +77,60 @@ function percentile(sorted: readonly number[], p: number): number {
   return sorted[Math.max(0, index)] as number;
 }
 
+function summarizeRouting(records: readonly UsageRecord[]): RoutingStats | null {
+  const routed = records.filter((r) => r.routing !== null);
+  if (routed.length === 0) return null;
+  let shadow = 0;
+  let applied = 0;
+  let passed = 0;
+  let switches = 0;
+  let decisions = 0;
+  let deciderMs = 0;
+  let deciderCost = 0;
+  let saved = 0;
+  let priced = 0;
+  const reasons = new Map<string, number>();
+
+  for (const r of routed) {
+    const g = r.routing as NonNullable<UsageRecord["routing"]>;
+    if (g.action === "shadow") shadow++;
+    else if (g.action === "route") applied++;
+    else {
+      passed++;
+      const reason = g.reason.replace(/\(.*\)$/, "").trim();
+      reasons.set(reason, (reasons.get(reason) ?? 0) + 1);
+    }
+    if (g.decided) {
+      decisions++;
+      deciderMs += g.deciderMs ?? 0;
+    }
+    deciderCost += g.deciderCostUsd ?? 0;
+    const different = g.action !== "passthrough" && g.model !== null && g.model !== r.requestModel;
+    if (different) {
+      switches++;
+      if (r.costUsd !== null && g.altCostUsd !== null) {
+        saved += g.action === "route" ? g.altCostUsd - r.costUsd : r.costUsd - g.altCostUsd;
+        priced++;
+      }
+    }
+  }
+  return {
+    requests: routed.length,
+    shadow,
+    routed: applied,
+    passedThrough: passed,
+    switches,
+    decisions,
+    avgDeciderMs: decisions > 0 ? deciderMs / decisions : null,
+    deciderCostUsd: deciderCost,
+    savedUsd: saved,
+    priced,
+    passthroughReasons: [...reasons]
+      .map(([reason, count]) => ({ reason, count }))
+      .sort((a, b) => b.count - a.count),
+  };
+}
+
 export function summarize(records: readonly UsageRecord[]): Stats {
   const total = emptyRow("total");
   const models = new Map<string, Mutable<ModelStats>>();
@@ -83,6 +161,7 @@ export function summarize(records: readonly UsageRecord[]): Stats {
       firstBytes.length > 0
         ? { p50: percentile(firstBytes, 0.5), p95: percentile(firstBytes, 0.95) }
         : null,
+    routing: summarizeRouting(records),
   };
 }
 
@@ -137,7 +216,32 @@ export function formatStats(stats: Stats, label: string): string {
       ]),
     ]),
   );
+  if (stats.routing) lines.push("", ...formatRouting(stats.routing));
   return lines.join("\n");
+}
+
+function formatRouting(r: RoutingStats): string[] {
+  const mode = r.routed > 0 ? "routing" : "shadow mode";
+  const lines = [
+    `Routing (${mode})`,
+    `  ${int.format(r.requests)} requests: ${int.format(r.routed)} rerouted, ${int.format(r.shadow)} logged only, ${int.format(r.passedThrough)} passed through`,
+    `  ${int.format(r.switches)} would use or used a different model than the agent asked for`,
+  ];
+  if (r.avgDeciderMs !== null) {
+    lines.push(
+      `  decider: ${int.format(r.decisions)} calls, ${r.avgDeciderMs.toFixed(0)} ms on average, ${usd(r.deciderCostUsd)} spent`,
+    );
+  }
+  if (r.priced > 0) {
+    const verb = r.routed > 0 ? "saved" : "would save";
+    lines.push(
+      `  estimate: ${verb} ${usd(r.savedUsd)} across ${int.format(r.priced)} switched requests (same tokens, ignoring cache rebuilds)`,
+    );
+  }
+  for (const p of r.passthroughReasons.slice(0, 3)) {
+    lines.push(`  passed through: ${p.reason} (${int.format(p.count)})`);
+  }
+  return lines;
 }
 
 /** Parses `24h`, `7d`, `30m` or `all` into a start time, or undefined for everything. */

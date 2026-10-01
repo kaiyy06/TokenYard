@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { PricingTable } from "../src/pricing.js";
 import { createUsageRecorder } from "../src/recorder.js";
 import { openSqliteStore } from "../src/sqlite.js";
+import { formatStats, summarize } from "../src/stats.js";
 import { createMemoryStore, type RoutingRecord, type UsageRecord } from "../src/store.js";
 
 const dirs: string[] = [];
@@ -112,5 +113,56 @@ describe("createUsageRecorder routing", () => {
     const store = createMemoryStore();
     createUsageRecorder(store, pricing)(exchange("route"));
     expect(store.list()[0]?.routing?.altCostUsd).toBeCloseTo(1000 * 3e-6 + 100 * 15e-6, 10);
+  });
+});
+
+describe("routing in stats", () => {
+  const rec = (routing: RoutingRecord | null, over: Partial<UsageRecord> = {}): UsageRecord => ({
+    ...base,
+    routing,
+    ...over,
+  });
+
+  it("summarizes shadow decisions, the decider's cost and the estimated saving", () => {
+    const stats = summarize([
+      rec(routing, { costUsd: 0.1 }),
+      rec({ ...routing, model: "claude-sonnet-5-5", altCostUsd: 0.1 }, { costUsd: 0.1 }),
+      rec({
+        ...routing,
+        action: "passthrough",
+        reason: "decider failed (timeout: slow)",
+        decided: false,
+        deciderMs: 800,
+        tier: null,
+        effort: null,
+        model: null,
+      }),
+      rec(null),
+    ]);
+    expect(stats.routing).toMatchObject({
+      requests: 3,
+      shadow: 2,
+      passedThrough: 1,
+      switches: 1,
+      decisions: 2,
+      priced: 1,
+    });
+    expect(stats.routing?.savedUsd).toBeCloseTo(0.1 - 0.001, 10);
+    expect(stats.routing?.passthroughReasons).toEqual([{ reason: "decider failed", count: 1 }]);
+    const text = formatStats(stats, "all time");
+    expect(text).toContain("Routing (shadow mode)");
+    expect(text).toContain("would save");
+  });
+
+  it("counts a rerouted request's saving as what the requested model would have cost", () => {
+    const stats = summarize([
+      rec({ ...routing, action: "route", altCostUsd: 0.5 }, { costUsd: 0.1 }),
+    ]);
+    expect(stats.routing?.savedUsd).toBeCloseTo(0.4, 10);
+    expect(formatStats(stats, "x")).toContain("saved");
+  });
+
+  it("has no routing section when routing was never involved", () => {
+    expect(summarize([rec(null)]).routing).toBeNull();
   });
 });
