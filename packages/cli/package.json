@@ -23,7 +23,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@tokenyard/gateway": "workspace:*"
+    "@tokenyard/decider": "workspace:*",
+    "@tokenyard/gateway": "workspace:*",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "tsdown": "0.23.0"

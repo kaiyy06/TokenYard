@@ -10,11 +10,15 @@ import {
   openSqliteStore,
   type PricingTable,
   parseSince,
+  type RoutingMode,
   startGateway,
   summarize,
   toCsv,
   toJsonl,
 } from "@tokenyard/gateway";
+
+import { buildRouter, type MakeDecider } from "./routing.js";
+import { loadSettings } from "./settings.js";
 
 export interface Io {
   out(text: string): void;
@@ -24,6 +28,9 @@ export interface Io {
 /** Things the commands reach out for, replaceable in tests. */
 export interface Deps {
   loadPricing(cacheFile: string): Promise<PricingTable>;
+  makeDecider?: MakeDecider;
+  /** Environment variables, for finding the decider's API key. */
+  env?: Readonly<Record<string, string | undefined>>;
 }
 
 const defaultDeps: Deps = {
@@ -40,6 +47,7 @@ start options:
   --port <n>                  Port to listen on (default 8787)
   --anthropic-upstream <url>  Default ${DEFAULT_UPSTREAMS.anthropic}
   --openai-upstream <url>     Default ${DEFAULT_UPSTREAMS.openai}
+  --mode <off|shadow|route>   Routing mode; overrides config.yaml. Routing is off without a config.
 
 stats options:
   --since <duration>          30m, 24h, 7d, 2w or all (default 24h)
@@ -72,15 +80,23 @@ export async function start(
       port: { type: "string" },
       "anthropic-upstream": { type: "string" },
       "openai-upstream": { type: "string" },
+      mode: { type: "string" },
       home: { type: "string" },
     },
     strict: true,
   });
+  if (values.mode !== undefined && !["off", "shadow", "route"].includes(values.mode)) {
+    throw new Error(`invalid --mode "${values.mode}" (use off, shadow or route)`);
+  }
   const port = values.port === undefined ? 8787 : Number(values.port);
   if (!Number.isInteger(port) || port < 0 || port > 65535) {
     throw new Error(`invalid port "${values.port}"`);
   }
   const home = homeDir(values.home);
+
+  const loaded = await loadSettings(home);
+  const settings =
+    values.mode === undefined ? loaded : { ...loaded, mode: values.mode as RoutingMode };
 
   const store = openSqliteStore(join(home, "usage.db"));
   const pricing = await deps.loadPricing(join(home, "pricing.json"));
@@ -88,8 +104,12 @@ export async function start(
     io.err("warning: no model prices available (offline?); spend will show as unpriced\n");
   }
 
+  const built = buildRouter(settings, pricing, deps.env ?? process.env, deps.makeDecider);
+  for (const note of built.notes) io.err(`${note}\n`);
+
   const gateway = await startGateway({
     port,
+    ...(built.router && { router: built.router }),
     upstreams: {
       ...(values["anthropic-upstream"] && { anthropic: values["anthropic-upstream"] }),
       ...(values["openai-upstream"] && { openai: values["openai-upstream"] }),
