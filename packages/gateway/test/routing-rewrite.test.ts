@@ -6,8 +6,8 @@ const send = (
   path: string,
   body: object,
   model: string,
-  tier = "fast" as const,
-  effort = "low" as const,
+  tier: Tier = "fast",
+  effort: Effort = "low",
 ) => {
   const out = rewriteRequest(path, Buffer.from(JSON.stringify(body)), model, { tier, effort });
   return out ? JSON.parse(out.toString("utf8")) : undefined;
