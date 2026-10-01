@@ -7,6 +7,8 @@ export interface Session {
   readonly key: string;
   /** The target the session is currently running on, once a decision has been made. */
   target?: Target;
+  /** The model the agent asked for when the session's decisions began; a change means the user switched. */
+  baselineModel?: string;
   /** Prompt tokens seen in the last response; what sits in the cache right now. */
   contextTokens: number;
   /** User turns routed so far. */
