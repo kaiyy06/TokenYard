@@ -29,5 +29,8 @@
   },
   "devDependencies": {
     "tsdown": "0.23.0"
+  },
+  "dependencies": {
+    "@tokenyard/decider": "workspace:*"
   }
 }
