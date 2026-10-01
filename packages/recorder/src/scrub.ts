@@ -270,7 +270,11 @@ function scrubBody(
   if (body.bytes === 0) return { kind: "empty" };
   const text = bodyText(body);
   if (text === undefined) return { kind: "opaque", bytes: body.bytes };
-  if (headerValue(headers, "content-type").includes("text/event-stream")) {
+  // Codex answers /responses with a stream but sends no content-type.
+  if (
+    headerValue(headers, "content-type").includes("text/event-stream") ||
+    /^(event|data):/.test(text)
+  ) {
     return { kind: "sse", events: scrubSse(text, chunks, pseudonymize) };
   }
   try {
