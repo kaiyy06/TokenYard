@@ -22,7 +22,11 @@ export function detectProvider(path: string, headers: IncomingHttpHeaders): Prov
   if (pathname.startsWith("/v1/messages") || pathname.startsWith("/v1/complete")) {
     return "anthropic";
   }
-  if (pathname.startsWith("/v1/chat/completions") || pathname.startsWith("/v1/responses")) {
+  if (
+    pathname.startsWith("/v1/chat/completions") ||
+    pathname.startsWith("/v1/responses") ||
+    pathname.startsWith("/responses")
+  ) {
     return "openai";
   }
   if (headers["anthropic-version"] !== undefined || headers["x-api-key"] !== undefined) {

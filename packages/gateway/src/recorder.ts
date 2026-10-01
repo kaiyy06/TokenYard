@@ -8,7 +8,9 @@ export function isInferencePath(path: string): boolean {
   return (
     pathname === "/v1/messages" ||
     pathname === "/v1/chat/completions" ||
-    pathname === "/v1/responses"
+    pathname === "/v1/responses" ||
+    // Codex signed in with ChatGPT posts to the bare path, with no /v1.
+    pathname === "/responses"
   );
 }
 
