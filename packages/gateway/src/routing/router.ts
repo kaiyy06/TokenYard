@@ -19,7 +19,7 @@ export type TierModels = Readonly<Record<Tier, string>>;
 export interface RouterConfig {
   readonly mode: RoutingMode;
   /** The model for each tier, per provider. */
-  readonly tiers: { readonly anthropic: TierModels; readonly openai: TierModels };
+  readonly tiers: { readonly anthropic?: TierModels; readonly openai?: TierModels };
   readonly policy?: PolicyConfig;
   /** How many more turns a session is assumed to run when weighing a cache rebuild. Default 8. */
   readonly expectedRemainingTurns?: number;
@@ -94,8 +94,9 @@ export function createRouter(deps: RouterDeps): Router {
 
     const models =
       shape.api === "anthropic-messages" ? config.tiers.anthropic : config.tiers.openai;
-    const requestTier = tierOf(models, shape.model);
     const base = { requestModel: shape.model, decided: false };
+    if (!models) return { action: "passthrough", reason: "no tier map for this provider", ...base };
+    const requestTier = tierOf(models, shape.model);
     if (!requestTier)
       return { action: "passthrough", reason: "model is not in the tier map", ...base };
 

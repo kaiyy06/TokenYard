@@ -168,3 +168,25 @@ describe("router", () => {
     expect(d).toMatchObject({ action: "route", model: "gpt-5-mini" });
   });
 });
+
+describe("router without an OpenAI tier map", () => {
+  it("leaves OpenAI requests alone", async () => {
+    const router = createRouter({
+      config: {
+        mode: "route",
+        tiers: {
+          anthropic: {
+            fast: "claude-haiku-4-5",
+            standard: "claude-sonnet-5-5",
+            frontier: "claude-opus-5-5",
+          },
+        },
+      },
+      sessions: createSessionStore(),
+      pricing,
+      classify: async () => ok(signals()),
+    });
+    const d = await router.decide("/responses", { model: "gpt-5", input: "hi" });
+    expect(d).toMatchObject({ action: "passthrough", reason: "no tier map for this provider" });
+  });
+});
