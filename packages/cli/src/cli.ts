@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { HELP, type Io, start, stats } from "./commands.js";
+import { doctor, init } from "./setup.js";
 
 // node:sqlite is still flagged experimental on Node 22. Hide that one notice, keep the rest.
 process.removeAllListeners("warning");
@@ -37,6 +38,10 @@ async function main(argv: string[]): Promise<number> {
     case "stats":
       stats(rest, io);
       return 0;
+    case "init":
+      return init(rest, io);
+    case "doctor":
+      return doctor(rest, io);
     default:
       io.err(`unknown command "${command}"\n\n${HELP}`);
       return 1;

@@ -42,6 +42,8 @@ export const HELP: string = `tokenyard: a local gateway for coding agents that t
 Usage:
   tokenyard start [options]   Run the gateway on 127.0.0.1
   tokenyard stats [options]   Show recorded usage and spend
+  tokenyard init [agent]      Point Claude Code, Codex or OpenCode at the gateway
+  tokenyard doctor [options]  Check that everything is set up and working
 
 start options:
   --port <n>                  Port to listen on (default 8787)
@@ -54,12 +56,22 @@ stats options:
   --json                      Print the summary as JSON
   --export <jsonl|csv>        Print every record instead of a summary
 
+init options:
+  [agent]                     claude, codex, opencode or all (default: every agent found)
+  --port <n>                  Port the gateway runs on (default 8787)
+  --undo                      Remove what init added
+  --force                     Replace a setting that already points elsewhere
+  --dry-run                   Show what would change without writing
+
+doctor options:
+  --port <n>                  Port the gateway runs on (default 8787)
+
 Common options:
   --home <dir>                Data directory (default ~/.tokenyard, or $TOKENYARD_HOME)
   -h, --help                  Show this help
 `;
 
-function homeDir(value: string | undefined): string {
+export function homeDir(value: string | undefined): string {
   return value ?? process.env.TOKENYARD_HOME ?? join(homedir(), ".tokenyard");
 }
 
