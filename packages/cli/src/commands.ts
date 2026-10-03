@@ -47,6 +47,7 @@ Usage:
 
 start options:
   --port <n>                  Port to listen on (default 8787)
+  --host <address>            Address to bind (default 127.0.0.1; 0.0.0.0 only inside a container)
   --anthropic-upstream <url>  Default ${DEFAULT_UPSTREAMS.anthropic}
   --openai-upstream <url>     Default ${DEFAULT_UPSTREAMS.openai}
   --mode <off|shadow|route>   Routing mode; overrides config.yaml. Routing is off without a config.
@@ -90,6 +91,7 @@ export async function start(
     args: [...argv],
     options: {
       port: { type: "string" },
+      host: { type: "string" },
       "anthropic-upstream": { type: "string" },
       "openai-upstream": { type: "string" },
       mode: { type: "string" },
@@ -121,6 +123,7 @@ export async function start(
 
   const gateway = await startGateway({
     port,
+    ...(values.host && { host: values.host }),
     ...(built.router && { router: built.router }),
     upstreams: {
       ...(values["anthropic-upstream"] && { anthropic: values["anthropic-upstream"] }),
