@@ -4,11 +4,14 @@ A local gateway for coding agents that shows what they spend. Pre-alpha: it curr
 usage and passes requests through unchanged. Routing comes later.
 
 ```sh
+tokenyard init           # point the agents you have installed at the gateway
 tokenyard start          # listen on 127.0.0.1:8787
+tokenyard doctor         # check that everything is wired up
 tokenyard stats          # spend for the last 24 hours
 ```
 
-Point an agent at it:
+`tokenyard init` edits each agent's own settings, so you do not need to set environment
+variables by hand. To try an agent once without changing its settings:
 
 ```sh
 ANTHROPIC_BASE_URL=http://127.0.0.1:8787 claude      # Claude Code
@@ -21,8 +24,32 @@ Use API keys. Subscription (OAuth) logins are not supported yet.
 
 `tokenyard start [--port 8787] [--anthropic-upstream <url>] [--openai-upstream <url>]`
 
-Runs the gateway. To send OpenAI-format traffic to another provider, set the upstream, for
+Runs the gateway. `--host` changes the bind address (default `127.0.0.1`); use `0.0.0.0` only
+inside a container. To send OpenAI-format traffic to another provider, set the upstream, for
 example `--openai-upstream https://openrouter.ai/api`.
+
+`tokenyard init [claude|codex|opencode|all] [--port 8787] [--undo] [--force] [--dry-run]`
+
+Points agents at the gateway. With no name it configures every agent whose settings folder
+exists. It changes only these settings and leaves the rest of each file alone:
+
+| Agent | File | What it sets |
+|---|---|---|
+| Claude Code | `~/.claude/settings.json` | `env.ANTHROPIC_BASE_URL` |
+| Codex CLI | `~/.codex/config.toml` | `model_provider` and a `[model_providers.tokenyard]` table, in a marked block |
+| OpenCode | `~/.config/opencode/opencode.json` | `provider.anthropic` and `provider.openai` `options.baseURL` |
+
+The first time it changes a file it saves the original next to it as `<file>.tokenyard.bak`.
+`--undo` removes only what init added. If a setting already points somewhere else, init stops
+and says so; `--force` replaces it. `--dry-run` shows what would change. Files that are not
+plain JSON (for example with comments) are never rewritten; edit those by hand. Codex needs
+`OPENAI_API_KEY` set, since the provider reads its key from there.
+
+`tokenyard doctor [--port 8787]`
+
+Checks the Node version, `config.yaml`, the decider's API key (when routing is on), whether a
+gateway is listening, and whether each agent points at it. Warnings are advice; it exits 1 only
+when something is broken.
 
 `tokenyard stats [--since 24h] [--json] [--export jsonl|csv]`
 
