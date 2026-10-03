@@ -22,13 +22,18 @@ coding agent ──► tokenyard (localhost) ──► your model provider
 - **Local and private.** It binds to `127.0.0.1`, stores no API keys and logs no
   prompt content by default. It can use a fully local decider (Kev).
 
-## Try it (usage tracking only)
+## Try it
 
 ```sh
 pnpm install && pnpm build
-node packages/cli/dist/cli.mjs start
-node packages/cli/dist/cli.mjs stats
+alias tokenyard="node $PWD/packages/cli/dist/cli.mjs"
+tokenyard init        # points Claude Code, Codex and OpenCode at the gateway (undo: --undo)
+tokenyard start       # in a second terminal
+tokenyard doctor      # checks the setup
+tokenyard stats       # after using an agent for a while
 ```
+
+Or run it in a container: see [docs/docker.md](docs/docker.md).
 
 See [packages/cli](packages/cli/README.md).
 
@@ -72,7 +77,8 @@ is treated as a choice the user made and left alone, as are the agent's own chea
 - [x] `@tokenyard/decider`: a typed client for the `/v1/systemone` decision API
 - [x] Pass-through gateway (Anthropic and OpenAI formats) with usage tracking
 - [x] Cache-aware routing policy with a shadow mode
-- [ ] `tokenyard init` for Claude Code, Codex and OpenCode
+- [x] `tokenyard init` and `tokenyard doctor` for Claude Code, Codex and OpenCode
+- [x] Docker image
 - [ ] Public, reproducible benchmark
 
 ## License
