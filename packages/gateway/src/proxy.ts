@@ -45,6 +45,11 @@ export interface GatewayOptions {
   readonly upstreams?: Partial<Upstreams>;
   /** Defaults to 8787. Use 0 for any free port. */
   readonly port?: number;
+  /**
+   * Address to bind. Defaults to 127.0.0.1, the only safe choice on a normal machine. Set it to
+   * 0.0.0.0 only inside a container, and publish the port to the host's loopback.
+   */
+  readonly host?: string;
   /** Called after every exchange. Errors thrown here are swallowed: observing never breaks traffic. */
   readonly onExchange?: (exchange: Exchange) => void;
   /**
@@ -281,7 +286,7 @@ export async function startGateway(options: GatewayOptions = {}): Promise<Gatewa
   const server = createServer(handle);
   await new Promise<void>((resolve, reject) => {
     server.once("error", reject);
-    server.listen(options.port ?? 8787, "127.0.0.1", resolve);
+    server.listen(options.port ?? 8787, options.host ?? "127.0.0.1", resolve);
   });
   const { port } = server.address() as AddressInfo;
 
